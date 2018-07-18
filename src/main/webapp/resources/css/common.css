@@ -18,6 +18,20 @@
 		url("../font/NanumSquareB.woff") format("woff");
 }
 
+@font-face{
+	font-family:NanumSRR;
+	src: url("../font/NanumSquareRoundR.eot");
+	src: url("../font/NanumSquareRoundR.eot?#iefix") format('embedded-opentype'),
+		url("../font/NanumSquareRoundR.woff") format("woff");	
+}
+
+@font-face{
+	font-family:NanumSRB;
+	src: url("../font/NanumSquareRoundB.eot");
+	src: url("../font/NanumSquareRoundB.eot?#iefix") format('embedded-opentype'),
+		url("../font/NanumSquareRoundB.woff") format("woff");	
+}
+
 /*@font-face { font-family: Nanum Gothic; src : url("../font/NanumG.eot"); src : url("../font/NanumG.eot?#iefix") format('embedded-opentype'), url("../font/NanumG.woff") format("woff"); } */
 
 /*==========================================================================
