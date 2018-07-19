@@ -4,38 +4,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>억산한의원</title>
+<title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?ver=3">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
-	body{
-	
-	}
 	header{
 		width:100%;
-		min-width:1100px;
-		margin:0 auto;
-		position: relative;
-		z-index: 99;
+		position:fixed;
+		top:0;
+		background:rgba(255, 255, 255, 0.7);
+		z-index: 999;
 	}
 	section{
 		width:100%;
+		margin-top:25%;
 		position: relative;
-		z-index: 9;
-	} 
+		z-index: 1;
+	}
 	.mainBanner, .mainBanner div{
 		width:100%;
-		min-width:1100px;
 	}
 	.mainBanner div img{
 		width:100%;
-	}
-	.contentWrap{
-		width:1100px;
-		margin:0 auto;
 	}
 	.clinicWrap{
 		width:100%;
@@ -45,7 +38,7 @@
 	}
 	.clinicIntroImg{
 		display:block;
-		width:620px;
+		width:75%;
 		margin:0 auto;
 		margin-bottom:50px;
 	}
@@ -54,12 +47,12 @@
 		overflow:hidden;
 	}
 	.clinic{
-		width:275px;
+		width:50%;
 		float:left;
 		position: relative;
 	}
 	.clinic > img{
-		width:275px;
+		width:100%;
 	}
 	.clinic > a{
 		position: absolute;
@@ -67,79 +60,88 @@
 		left:25px;
 	}
 	.clinic > a > img{
-		width:70px;
+		width:200px;
 	}
 	.secondContentWrap{
 		width:100%;
-		overflow:hidden;
+		margin-bottom:50px;
 	}
 	.mainInfo{
-		width:745px;
-		height:303px;
+		width:100%;
 		background: url("${pageContext.request.contextPath}/resources/images/infoBg.png");
-		float:left;
 	}
 	.mainInfo > img{
 		width:100%;
 	}
 	.mainNotice{
-		width:335px;
-		height:303px;
+		width:100%;
 		background: url("${pageContext.request.contextPath}/resources/images/noticeBg.png");
-		float:right;
+		padding:21px;
 	}
-	/* .mainNotice > h1{
-		font-family:NanumSRB;
-	} */
 	.mainNotice > .notice{
-		width:305px;
-		height:275px;
-		margin:auto;
-		margin-top:14px;
+		width:100%;
+		margin:0 auto;
 		background: #fff;
 	}
 	.notice > img{
 		display:block;
-		width:235px;
+		width:100%;
 		margin:0 auto;
 		padding-top:15px;
 		margin-bottom:15px;
 	}
 	.tblNotice{
-		width:255px;
+		width:100%;
 		margin:0 auto;
 	}
+	.tblNotice tr:first-child{
+		border-bottom:2px solid gray;
+	}
+	.tblNotice tr:first-child td{
+		padding:25px 20px;
+		overflow: hidden;
+	}
+	.tblNotice tr:first-child td >img{
+		width:200px;
+	}
+	.tblNotice tr:first-child td > span{
+		font-size:25px;
+		line-height:50px;
+		margin-left:20px;
+	}
+	.noticeMoreBtn{
+		display:inline-block;
+		width:55px;
+		float:right;
+	}
+	.noticeMoreBtn > img{
+		width:100%;
+	}
 	.tblNotice td{
-		font-size:15px;
+		font-size:30px;
 		line-height: 33px;
-
 	}
 	.tblNotice .tblIcon{
 		width:20px;
+		padding-left:25px;
+	}
+	.tblIcon > img{
+		width:15px;
+		margin-top:12px;
 	}
 	.tblTitle:hover > a{
 		color:#333;
 		font-weight:600;
 	}
-	.tblIcon > img{
-		width:8px;
-		margin-top:12px;
-	}
 	.tblDate{
 		width:77px;
 	}
-	.noticeMoreBtn{
-		display: block;
-		width:30px;
-		margin:0 auto;
-		margin-top:11px;
-	}
-	.noticeMoreBtn > img{
-		width:100%;
-	}
+	
+	
 </style>
-<script type="text/javascript">
+<script>
 	$(function(){
+		//메인 슬라이드
 		$(".mainBanner").slick({
 			arrows:false,
 			infinite:true,
@@ -149,19 +151,14 @@
 			autoplay:true,
 			autoplaySpeed:4000
 		});
-		$(".noticeMoreBtn").hover(function(){
-			$(".noticeMoreBtn > img").attr("src","${pageContext.request.contextPath}/resources/images/noticeBtn2.png");
-		},function(){
-			$(".noticeMoreBtn > img").attr("src","${pageContext.request.contextPath}/resources/images/noticeBtn.png");
-		});
 	});
 </script>
 </head>
 <body>
 	<header>
-		<jsp:include page="../include/header.jsp"></jsp:include>
+		<jsp:include page="../include/mHeader.jsp"></jsp:include>
 	</header>
-	<section>
+	<section id="main">
 		<div class="mainBanner">
 			<div><img src="${pageContext.request.contextPath}/resources/images/mainSlide01.png" alt="억산한의원"></div>
 			<div><img src="${pageContext.request.contextPath}/resources/images/mainSlide02.png" alt="억산한의원"></div>
@@ -177,7 +174,7 @@
 					</div>
 					<div class="clinic">
 						<img src="${pageContext.request.contextPath}/resources/images/mainClinic02.png">
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="통증클리닉 더보기"></a>
+						<a href="${pageContext.request.contextPath}/intro1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="통증클리닉 더보기"></a>
 					</div>
 					<div class="clinic">
 						<img src="${pageContext.request.contextPath}/resources/images/mainClinic03.png">
@@ -194,11 +191,16 @@
 					<img src="${pageContext.request.contextPath}/resources/images/infoImg.png">
 				</div>
 				<div class="mainNotice">
-					<%-- <img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon.png">
-					<h1>공지사항</h1> --%>
 					<div class="notice">
-						<img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon2.png">
+						<%-- <img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon2.png"> --%>
 						<table class="tblNotice">
+							<tr>
+								<td colspan="3">
+									<img src="${pageContext.request.contextPath}/resources/images/mobileMainNoticeIcon.png">
+									<span>억산한의원의 새로운 소식입니다.</span>
+									<a class="noticeMoreBtn" href=""><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
+								</td>
+							</tr>
 							<tr>
 								<td class="tblIcon"><img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon3.png"></td>
 								<td class="tblTitle"><a href="">안녕하세요~ 억산입니다.</a></td>
@@ -215,14 +217,13 @@
 								<td class="tblDate">2018.08.08</td>
 							</tr>
 						</table>
-						<a class="noticeMoreBtn" href=""><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
 					</div><!-- notice end -->
 				</div><!-- mainNotice end -->
 			</div><!-- secondContentWrap end -->
-		</div><!-- contentWrap end -->
+		</div>
 	</section>
 	<footer>
-		<jsp:include page="../include/footer.jsp"></jsp:include>
+		
 	</footer>
 </body>
 </html>

@@ -1,39 +1,72 @@
 package com.webaid.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.mobile.device.Device;
+import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
+	// device check
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("euksan Home.", locale);
+	public String deviceCheck(HttpServletRequest req, Model model) {
+		logger.info("deviceCheck.");
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		Device device=DeviceUtils.getCurrentDevice(req);
+		String deviceType="unknown";
 		
-		String formattedDate = dateFormat.format(date);
+		if(device == null){
+			deviceType="unknown";
+			logger.info(deviceType);
+			return "main/pcIndex";
+		}
 		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "main/index";
+		if(device.isMobile()){
+			deviceType="mobile";
+			logger.info(deviceType);
+			return "main/mobileIndex";
+		}else{
+			deviceType="normal";
+			logger.info(deviceType);
+			return "main/pcIndex";
+		}
 	}
 	
+	//============================== mobile =====================================
+	@RequestMapping(value = "/mMain", method = RequestMethod.GET)
+	public String mobileMain() {
+		logger.info("mobile Home.");
+		
+		
+		return "main/mobileIndex";
+	}
+	//============================== mobile end =================================
+	
+	
+	// ====================== pc, tablet =========================================
+	@RequestMapping(value = "/pcMain", method = RequestMethod.GET)
+	public String pcMain() {
+		logger.info("mobile Home.");
+		
+		
+		return "main/pcIndex";
+	}
+	@RequestMapping(value = "/intro1", method = RequestMethod.GET)
+	public String intro01() {
+		logger.info("euksan Home.");
+		
+		
+		return "intro/intro01";
+	}
+	
+	// ====================== pc, tablet end ===================================
 }

@@ -3,6 +3,7 @@
 <style type="text/css">
 	.headerWrap{
 		width:100%;
+		min-width:1100px;
 		margin:0 auto;
 		text-align: center;
 	}
@@ -82,19 +83,19 @@
 	});
 </script>
 <div class="headerWrap">
-	<a class="logoImg" href=""><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
+	<a class="logoImg" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
 	<div class="headerTopMenu">
-		<a href="">홈으로</a> 
+		<a href="${pageContext.request.contextPath}/">홈으로</a> 
 		<span class="bar">|</span>
 		<a href="">관리자</a>
 	</div>
 	<div class="mainNav">
 		<ul class="mainNavUl">
 			<li>
-				<a href="">한의원 소개</a>
+				<a href="${pageContext.request.contextPath}/intro1">한의원 소개</a>
 				<div class="subNav">
 					<ul class="subNavUl">
-						<li><a href="">인사말</a></li>
+						<li><a href="${pageContext.request.contextPath}/intro1">인사말</a></li>
 						<li><a href="">의료진 소개</a></li>
 						<li><a href="">둘러보기</a></li>
 						<li><a href="">진료안내</a></li>
