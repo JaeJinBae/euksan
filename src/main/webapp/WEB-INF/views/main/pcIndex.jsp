@@ -7,7 +7,7 @@
 <title>억산한의원</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?ver=3">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=0"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
@@ -185,6 +185,7 @@
 		//메인 슬라이드
 		$(".mainBanner").slick({
 			arrows:false,
+			dots:true,
 			infinite:true,
 			speed:500,
 			fade:true,
@@ -202,7 +203,7 @@
 		
 		//둘러보기 슬라이드 
 		$(".bottomSlider").slick({
-			arrows:false,
+			arrows:true,
 			infinite:true,
 			speed:500,
 			fade:true,

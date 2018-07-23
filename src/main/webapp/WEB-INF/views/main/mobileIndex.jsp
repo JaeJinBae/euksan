@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <style>
 	header{
 		width:100%;
@@ -81,60 +82,65 @@
 	.mainNotice > .notice{
 		width:100%;
 		margin:0 auto;
+		padding-bottom:25px;
 		background: #fff;
 	}
-	.notice > img{
+	/* .notice > img{
 		display:block;
 		width:100%;
 		margin:0 auto;
 		padding-top:15px;
 		margin-bottom:15px;
+	} */
+	.notice > p{
+		padding:25px 20px;
+		overflow:hidden;
+		border-bottom: 5px solid lightgray;
+		margin-bottom:20px;
+	}
+	.notice > p > img{
+		float:left;
+	}
+	.notice > p > span{
+		font-size:32px;
+		line-height:65px;
+		margin-left:25px;
+	}
+	.notice > p > a{
+		float:right;
+		width:67px;
+	}
+	.notice > p > a > img{
+		width:100%;
 	}
 	.tblNotice{
 		width:100%;
 		margin:0 auto;
 	}
-	.tblNotice tr:first-child{
-		border-bottom:2px solid gray;
-	}
-	.tblNotice tr:first-child td{
-		padding:25px 20px;
-		overflow: hidden;
-	}
-	.tblNotice tr:first-child td >img{
-		width:200px;
-	}
-	.tblNotice tr:first-child td > span{
-		font-size:25px;
-		line-height:50px;
-		margin-left:20px;
-	}
-	.noticeMoreBtn{
-		display:inline-block;
-		width:55px;
-		float:right;
-	}
-	.noticeMoreBtn > img{
-		width:100%;
-	}
 	.tblNotice td{
-		font-size:30px;
-		line-height: 33px;
+		font-size:32px;
+		line-height: 60px;
 	}
 	.tblNotice .tblIcon{
-		width:20px;
-		padding-left:25px;
+		width:60px;
+		padding-left:40px;
 	}
 	.tblIcon > img{
 		width:15px;
-		margin-top:12px;
+		margin-top:20px;
 	}
-	.tblTitle:hover > a{
-		color:#333;
-		font-weight:600;
+	.tblTitle{
+		width:500px;
+		overflow:hidden;
+		white-space:nowrap;
+		text-overflow: ellipsis;
+	}
+	.tblTitle > a {
+		width:100%;
+		font-size:37px;
 	}
 	.tblDate{
-		width:77px;
+		width:140px;
 	}
 	
 	
@@ -174,7 +180,7 @@
 					</div>
 					<div class="clinic">
 						<img src="${pageContext.request.contextPath}/resources/images/mainClinic02.png">
-						<a href="${pageContext.request.contextPath}/intro1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="통증클리닉 더보기"></a>
+						<a href="${pageContext.request.contextPath}/mIntro1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="통증클리닉 더보기"></a>
 					</div>
 					<div class="clinic">
 						<img src="${pageContext.request.contextPath}/resources/images/mainClinic03.png">
@@ -193,22 +199,20 @@
 				<div class="mainNotice">
 					<div class="notice">
 						<%-- <img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon2.png"> --%>
+						<p>
+							<img src="${pageContext.request.contextPath}/resources/images/mobileMainNoticeIcon.png">
+							<span>억산한의원의 새로운 소식입니다.</span>
+							<a class="noticeMoreBtn" href=""><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
+						</p>
 						<table class="tblNotice">
 							<tr>
-								<td colspan="3">
-									<img src="${pageContext.request.contextPath}/resources/images/mobileMainNoticeIcon.png">
-									<span>억산한의원의 새로운 소식입니다.</span>
-									<a class="noticeMoreBtn" href=""><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
-								</td>
-							</tr>
-							<tr>
 								<td class="tblIcon"><img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon3.png"></td>
-								<td class="tblTitle"><a href="">안녕하세요~ 억산입니다.</a></td>
+								<td class="tblTitle"><a href="">안녕하세요~ 억산입니다. 지금은 게시판 테스트 중 입니다.</a></td>
 								<td class="tblDate">2018.08.08</td>
 							</tr>
 							<tr>
 								<td class="tblIcon"><img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon3.png"></td>
-								<td class="tblTitle"><a href="">안녕하세요~ 억산입니다.</a></td>
+								<td class="tblTitle"><a href="">반갑습니다 지금은 억산 공지사항 테스트 입니다.</a></td>
 								<td class="tblDate">2018.08.08</td>
 							</tr>
 							<tr>
@@ -223,7 +227,7 @@
 		</div>
 	</section>
 	<footer>
-		
+		<jsp:include page="../include/mFooter.jsp"></jsp:include>
 	</footer>
 </body>
 </html>

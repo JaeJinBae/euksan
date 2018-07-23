@@ -108,7 +108,7 @@
 	}
 	.sideMenuNav > ul > li > a{
 		font-family:NanumSRB;
-		font-size:25px;
+		font-size:20px;
 	}
 	.sideMenuNav > img{
 		width:200px;
@@ -144,23 +144,26 @@
 			<div class="sideMenuWrap">
 				<img src="${pageContext.request.contextPath}/resources/images/clinicSideMenuBg.png">
 				<div class="sideMenuTopText">
-					<h1>한의원</h1>
-					<h1>소개</h1>
+					<h1>억산</h1>
+					<h1>클리닉</h1>
 					<hr>
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="" style="color:black;">인사말</a></li>
-						<li><a href="">진료안내</a></li>
-						<li><a href="">둘러보기</a></li>
-						<li><a href="">오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic1">유산 후 관리</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic2">산후 조리</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic3">소아질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic4" style="color:black;">부인과 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic5">남성 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic6">수험생클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic7">다이어트</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
 				</div>
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicTest.png">
+				<img src="${pageContext.request.contextPath}/resources/images/euksanClinic4.png">
 			</div>
 		</div>
 	</section>

@@ -134,7 +134,7 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/painClinicBg.png">
 			<div class="clinicBgText">
 				<h1>통증클리닉</h1>
 				<p>통증에 따른 억산한의원의 클리닉</p>
@@ -144,23 +144,22 @@
 			<div class="sideMenuWrap">
 				<img src="${pageContext.request.contextPath}/resources/images/clinicSideMenuBg.png">
 				<div class="sideMenuTopText">
-					<h1>한의원</h1>
-					<h1>소개</h1>
+					<h1>통증</h1>
+					<h1>클리닉</h1>
 					<hr>
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="" style="color:black;">인사말</a></li>
-						<li><a href="">진료안내</a></li>
-						<li><a href="">둘러보기</a></li>
-						<li><a href="">오시는 길</a></li>
+						<li><a href="">공지사항</a></li>
+						<li><a href="">언론보도</a></li>
+						<li><a href="">온라인 상담</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
 				</div>
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicTest.png">
+				<img src="${pageContext.request.contextPath}/resources/images/painClinicContent01.png">
 			</div>
 		</div>
 	</section>

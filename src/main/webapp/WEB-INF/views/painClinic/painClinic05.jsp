@@ -108,7 +108,7 @@
 	}
 	.sideMenuNav > ul > li > a{
 		font-family:NanumSRB;
-		font-size:25px;
+		font-size:20px;
 	}
 	.sideMenuNav > img{
 		width:200px;
@@ -144,23 +144,24 @@
 			<div class="sideMenuWrap">
 				<img src="${pageContext.request.contextPath}/resources/images/clinicSideMenuBg.png">
 				<div class="sideMenuTopText">
-					<h1>한의원</h1>
-					<h1>소개</h1>
+					<h1>통증</h1>
+					<h1>클리닉</h1>
 					<hr>
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="" style="color:black;">인사말</a></li>
-						<li><a href="">진료안내</a></li>
-						<li><a href="">둘러보기</a></li>
-						<li><a href="">오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic1">목디스크</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic2">허리디스크</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic3">무릎통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic4">손목·팔꿈치통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic5" style="color:black;">족부통증</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
 				</div>
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicTest.png">
+				<img src="${pageContext.request.contextPath}/resources/images/painClinic05.png">
 			</div>
 		</div>
 	</section>

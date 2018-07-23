@@ -9,20 +9,21 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <style>
 	body{
 		
 	}
 	header{
 		width:100%;
-		margin:0 auto;
-		position: relative;
-		z-index: 99;
+		position:fixed;
+		top:0;
+		background:rgba(255, 255, 255, 0.7);
+		z-index: 999;
 	} 
 	section{
-		widht:100%;
-		min-width:1100px;
-		margin:0 auto;
+		width:100%;
+		margin-top:25%;
 		position: relative;
 		z-index: 9;
 	}
@@ -60,13 +61,35 @@
 		letter-spacing:0.7px;
 		font-family:NanumSRR;
 	}
+	.middleNav{
+		width:100%;
+		background: #362719;
+	}
+	.middleNav > ul{
+		overflow: hidden;
+	}
+	.middleNav > ul > li{
+		width:200px;
+		color:#fff;
+		float:left;
+		text-align: center;
+		font-size:35px;
+		padding:30px 20px;
+	}
+	.middleNav > ul > li > a{
+		color:#fff;
+	}
+	.nextArrow{
+		width:50px !important;
+	}
 	.contentWrap{
-		width:1100px;
+		width:100%;
 		margin:0 auto;
 		overflow:hidden;
 	}
 	.sideMenuWrap{
-		width:200px;
+		display:none;
+		width:20%;
 		margin-top:35px;
 		float:left;
 		position: relative;
@@ -115,11 +138,11 @@
 		margin-top:10px;
 	}
 	.contentMain{
-		width:850px;
+		width:100%;
 		float:right;
 	}
 	.contentMain > img{
-		width:100%;
+		width:102%;
 	}
 </style>
 <script type="text/javascript">
@@ -130,42 +153,50 @@
 </head>
 <body>
 	<header>
-		<jsp:include page="../include/header.jsp"></jsp:include>
+		<jsp:include page="../include/mHeader.jsp"></jsp:include>
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/painClinicBg.png">
 			<div class="clinicBgText">
 				<h1>통증클리닉</h1>
 				<p>통증에 따른 억산한의원의 클리닉</p>
 			</div><!-- clinicBgText end -->
 		</div><!-- clinicBg end -->
+		<div class="middleNav">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
+				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
+				<li><a href="">통증클리닉</a></li>
+				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
+				<li style="font-weight:bold;">추나요법</li>
+			</ul>
+		</div>
 		<div class="contentWrap">
 			<div class="sideMenuWrap">
 				<img src="${pageContext.request.contextPath}/resources/images/clinicSideMenuBg.png">
 				<div class="sideMenuTopText">
-					<h1>한의원</h1>
-					<h1>소개</h1>
+					<h1>통증</h1>
+					<h1>클리닉</h1>
 					<hr>
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="" style="color:black;">인사말</a></li>
-						<li><a href="">진료안내</a></li>
-						<li><a href="">둘러보기</a></li>
-						<li><a href="">오시는 길</a></li>
+						<li><a href="">추나요법</a></li>
+						<li><a href="">목·허리 디스크</a></li>
+						<li><a href="">관절통증</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
 				</div>
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicTest.png">
+				<img src="${pageContext.request.contextPath}/resources/images/painClinicContent011.png">
 			</div>
 		</div>
 	</section>
 	<footer>
-		<jsp:include page="../include/footer.jsp"></jsp:include>
+		<jsp:include page="../include/mFooter.jsp"></jsp:include>
 	</footer>
 </body>
 </html>

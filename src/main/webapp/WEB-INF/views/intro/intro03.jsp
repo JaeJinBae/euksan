@@ -150,9 +150,9 @@
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="" style="color:black;">인사말</a></li>
+						<li><a href="">인사말</a></li>
 						<li><a href="">진료안내</a></li>
-						<li><a href="">둘러보기</a></li>
+						<li><a href="" style="color:black;">둘러보기</a></li>
 						<li><a href="">오시는 길</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
