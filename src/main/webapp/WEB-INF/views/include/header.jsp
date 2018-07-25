@@ -33,14 +33,14 @@
 		background: #362719;
 	}
 	.mainNavUl{
-		width:930px;
+		width:942px;
 		margin:0 auto;
 		overflow:hidden;
 		background: rgba(54, 39, 25, 0.7);
 	}
 	.mainNavUl > li{
 		float:left;
-		width:155px;
+		width:157px;
 		height: 60px;
 		line-height: 60px;
 		padding:0 20px;
@@ -87,7 +87,7 @@
 	<div class="headerTopMenu">
 		<a href="${pageContext.request.contextPath}/">홈으로</a> 
 		<span class="bar">|</span>
-		<a href="">관리자</a>
+		<a href="${pageContext.request.contextPath}/admin/login">관리자</a>
 	</div>
 	<div class="mainNav">
 		<ul class="mainNavUl">
@@ -118,11 +118,11 @@
 				<a href="${pageContext.request.contextPath}/euksanClinic1">억산 클리닉</a>
 				<div class="subNav">
 					<ul class="subNavUl">
-						<li><a href="${pageContext.request.contextPath}/euksanClinic1">유산 후 관리</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic1">유산 후 조리</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic2">산후 조리</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic3">소아 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic3">소아·청소년 질환</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic4">부인과 질환</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic5">남성 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic5">남성 전립선 질환</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic6">수험생클리닉</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic7">다이어트</a></li>
 					</ul>
@@ -153,8 +153,8 @@
 				<div class="subNav">
 					<ul class="subNavUl">
 						<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>
-						<li><a href="">언론보도</a></li>
-						<li><a href="">온라인 상담</a></li>
+						<li><a href="${pageContext.request.contextPath}/broadcasting">언론보도</a></li>
+						<li><a href="${pageContext.request.contextPath}/advice">온라인 상담</a></li>
 					</ul>
 				</div>
 			</li>

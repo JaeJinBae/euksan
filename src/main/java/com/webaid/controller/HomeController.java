@@ -1,20 +1,52 @@
 package com.webaid.controller;
 
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.webaid.domain.AdviceVO;
+import com.webaid.domain.BroadcastingVO;
+import com.webaid.domain.NoticeVO;
+import com.webaid.domain.PageMaker;
+import com.webaid.domain.ReplyVO;
+import com.webaid.domain.SearchCriteria;
+import com.webaid.service.AdviceService;
+import com.webaid.service.BroadcastingService;
+import com.webaid.service.NoticeService;
+import com.webaid.service.ReplyService;
 
 @Controller
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	@Autowired
+	private NoticeService nService;
+	
+	@Autowired
+	private BroadcastingService bService;
+	
+	@Autowired
+	private AdviceService aService;
+	
+	@Autowired
+	private ReplyService rService;
 	
 	// device check
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -215,12 +247,243 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)
-	public String noticeHome() {
+	public String noticeHome(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("noticeHome GET");
 		
+		List<NoticeVO> list = nService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "euksanStory/notice";
 	}
 	
+	@RequestMapping(value = "/noticeRead", method = RequestMethod.GET)
+	public String noticeRead(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("noticeRead GET");
+		
+		NoticeVO vo=nService.selectOne(bno);
+		nService.updateCnt(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "euksanStory/noticeRead";
+	}
+
+	@RequestMapping(value = "/broadcasting")
+	public String broadcasting(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+
+		logger.info("broadcasting get");
+
+		List<BroadcastingVO> list = bService.listSearch(cri);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(bService.listSearchCount(cri));
+
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+
+		return "euksanStory/broadcasting";
+	}
+
+	@RequestMapping(value = "/broadcastingRead", method = RequestMethod.GET)
+	public String readBroadcasting(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("broadcastingRead Get");
+
+		BroadcastingVO vo = bService.selectOne(bno);
+		bService.updateCnt(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(bService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "euksanStory/broadcastingRead";
+	}
+	
+	@RequestMapping(value = "/advice", method=RequestMethod.GET)
+	public String advice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("advice get");
+		/*String keyword=cri.getKeyword()+"";
+		logger.info(keyword);
+		
+		if(!keyword.equals("null")){
+			logger.info("키워드가 있다");
+			String decodeResult=URLDecoder.decode(keyword, "UTF-8");
+			String encodeResult=URLEncoder.encode(keyword, "UTF-8");
+			cri.setKeyword(encodeResult);
+		}*/
+		
+		List<AdviceVO> list = aService.listSearch(cri);
+		logger.info(cri.getKeyword());
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		 
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "euksanStory/advice";
+	}
+	
+	@RequestMapping(value = "/adviceRegister", method = RequestMethod.GET)
+	public String adviceRegisterGet(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adviceRegister Get");
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "euksanStory/adviceRegister";
+	}
+	
+	@RequestMapping(value = "/adviceRegister", method = RequestMethod.POST)
+	public String adviceRegisterPost(AdviceVO vo) {
+		logger.info("adviceRegister post");
+		aService.insert(vo);
+		
+		return "redirect:/advice";
+	}
+	
+	@RequestMapping(value = "/advicePwType", method = RequestMethod.GET)
+	public String advicePWcheck(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("advicePWcheck Get");
+		
+		AdviceVO vo=aService.selectOne(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		String pwtype=vo.getPwtype();
+		
+		if(pwtype.equals("o")){
+			logger.info("go Read");
+			
+			ReplyVO rvo=rService.select(bno);
+			
+			model.addAttribute("reply", rvo);
+			
+			return "euksanStory/adviceRead";
+		}
+		
+		return "euksanStory/advicePwCheck";
+	}
+	
+	@RequestMapping(value = "/advicePWcheck2", method = RequestMethod.POST)
+	public ResponseEntity<String> advicePWCheckPost(@RequestBody AdviceVO voo) {
+		logger.info("advicePWcheck post");
+		
+		ResponseEntity<String> entity=null;
+		try{
+			AdviceVO vo=aService.selectOne(voo.getBno());
+			String realPW=vo.getPw();
+			
+			if(realPW.equals(voo.getPw())){
+				logger.info("패스워드 맞음");
+				entity=new ResponseEntity<String>("ok",HttpStatus.OK);
+				return entity;
+			}else{
+				logger.info("패스워드 틀림");
+				entity=new ResponseEntity<String>("no",HttpStatus.OK);
+				return entity;
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			entity=new ResponseEntity<String>("no",HttpStatus.BAD_REQUEST);
+			
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/adviceRead")
+	public String adviceRead(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adviceRead GET");
+		
+		AdviceVO vo=aService.selectOne(bno);
+		ReplyVO rvo=rService.select(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		model.addAttribute("pageMaker", pageMaker);
+		
+		
+		model.addAttribute("item",vo);
+		model.addAttribute("reply", rvo);
+		
+		return "euksanStory/adviceRead";
+	}
+	
+	@RequestMapping(value="/adviceUpdate", method=RequestMethod.GET)
+	public String adviceUpdateGet(int bno, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("adviceUpdate");
+		
+		AdviceVO vo=aService.selectOne(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		
+		
+		model.addAttribute("item",vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "euksanStory/adviceUpdate";
+	}
+	
+	@RequestMapping(value="/adviceUpdate", method=RequestMethod.POST)
+	public String adviceUpdatePost(AdviceVO vo, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
+		logger.info("adviceUpdate Post");
+		
+		aService.update(vo);
+		
+		PageMaker pageMaker = new PageMaker();
+		
+		pageMaker.setCri(cri);
+		
+		return "redirect:/adviceRead"+pageMaker.makeSearch(cri.getPage())+"&bno="+vo.getBno();
+	}
+	
+	@RequestMapping(value="/adviceDelete")
+	public String adviceDelete(int bno, @ModelAttribute("cri") SearchCriteria cri) throws Exception{
+		logger.info("adviceDelete");
+		aService.delete(bno);
+		
+		PageMaker pageMaker = new PageMaker();
+		
+		pageMaker.setCri(cri);
+		
+		return "redirect:/advice"+pageMaker.makeSearch(cri.getPage());
+	}
 	// ====================== pc, tablet end ===================================
 }

@@ -135,11 +135,10 @@
 				<p>한의원 소개 <img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_down_x1.png"></p>
 				<div class="subMenu">
 					<ul class="subNavUl">
-						<li><a href="${pageContext.request.contextPath}/intro1">- 인사말</a></li>
-						<li><a href="">- 의료진 소개</a></li>
-						<li><a href="">- 둘러보기</a></li>
-						<li><a href="">- 진료안내</a></li>
-						<li><a href="">- 오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/mIntro1">- 인사말</a></li>
+						<li><a href="${pageContext.request.contextPath}/mIntro2">- 진료안내</a></li>
+						<li><a href="${pageContext.request.contextPath}/mIntro3">- 둘러보기</a></li>
+						<li><a href="${pageContext.request.contextPath}/mIntro4">- 오시는 길</a></li>
 					</ul>
 				</div>
 			</li>
@@ -147,9 +146,11 @@
 				<p>통증 클리닉<img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_down_x1.png"></p>
 				<div class="subMenu">
 					<ul class="subNavUl">
-						<li><a href="">- 목디스크</a></li>
-						<li><a href="">- 허리디스크</a></li>
-						<li><a href="">- 관절통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/mPainClinic1">- 목디스크</a></li>
+						<li><a href="${pageContext.request.contextPath}/mPainClinic2">- 허리디스크</a></li>
+						<li><a href="${pageContext.request.contextPath}/mPainClinic3">- 무릎통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/mPainClinic4">- 손목·팔꿈치통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/mPainClinic5">- 족부통증</a></li>
 					</ul>
 				</div>
 			</li>
@@ -157,12 +158,13 @@
 				<p>억산 클리닉<img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_down_x1.png"></p>
 				<div class="subMenu">
 					<ul class="subNavUl">
-						<li><a href="">- 유산 후 관리</a></li>
-						<li><a href="">- 산후 조리</a></li>
-						<li><a href="">- 소아 질환</a></li>
-						<li><a href="">- 수험생클리닉</a></li>
-						<li><a href="">- 부인과 질환</a></li>
-						<li><a href="">- 남성 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanClinic1">- 유산 후 조리</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanClinic2">- 산후 조리</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanClinic3">- 소아·청소년 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanClinic4">- 부인과 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanClinic5">- 남성 전립선 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanClinic6">- 수험생클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanClinic7">- 다이어트</a></li>
 					</ul>
 				</div>
 			</li>
@@ -170,7 +172,7 @@
 				<p>교통사고 클리닉<img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_down_x1.png"></p>
 				<div class="subMenu">
 					<ul class="subNavUl">
-						<li><a href="">- 교통사고 클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/mAccidentClinic">- 교통사고 클리닉</a></li>
 					</ul>
 				</div>
 			</li>
@@ -178,12 +180,11 @@
 				<p>억산 치료법<img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_down_x1.png"></p>
 				<div class="subMenu">
 					<ul class="subNavUl">
-						<li><a href="">- 보약</a></li>
-						<li><a href="">- 공진단</a></li>
-						<li><a href="">- 약침/봉침</a></li>
-						<li><a href="">- 침·뜸·부항</a></li>
-						<li><a href="">- 추나요법</a></li>
-						<li><a href="">- 다이어트</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanCare1">- 보약</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanCare2">- 공진단</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanCare3">- 약침/봉침</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanCare4">- 침·뜸·부항</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanCare5">- 추나요법</a></li>
 					</ul>
 				</div>
 			</li>
@@ -191,9 +192,9 @@
 				<p>억산 이야기<img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_down_x1.png"></p>
 				<div class="subMenu">
 					<ul class="subNavUl">
-						<li><a href="">- 공지사항</a></li>
-						<li><a href="">- 언론보도</a></li>
-						<li><a href="">- 온라인 상담</a></li>
+						<li><a href="${pageContext.request.contextPath}/mNotice">- 공지사항</a></li>
+						<li><a href="${pageContext.request.contextPath}/mBroadcasting">- 언론보도</a></li>
+						<li><a href="${pageContext.request.contextPath}/mAdvice">- 온라인 상담</a></li>
 					</ul>
 				</div>
 			</li>

@@ -176,19 +176,19 @@
 				<div class="clinicContentWrap">
 					<div class="clinic">
 						<img src="${pageContext.request.contextPath}/resources/images/mainClinic01.png">
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="교통사고클리닉 더보기"></a>
+						<a href="${pageContext.request.contextPath}/mAccidentClinic"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="교통사고클리닉 더보기"></a>
 					</div>
 					<div class="clinic">
 						<img src="${pageContext.request.contextPath}/resources/images/mainClinic02.png">
-						<a href="${pageContext.request.contextPath}/mIntro1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="통증클리닉 더보기"></a>
+						<a href="${pageContext.request.contextPath}/mPainClinic1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="통증클리닉 더보기"></a>
 					</div>
 					<div class="clinic">
 						<img src="${pageContext.request.contextPath}/resources/images/mainClinic03.png">
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="보양클리닉 더보기"></a>
+						<a href="${pageContext.request.contextPath}/mEuksanClinic1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="보양클리닉 더보기"></a>
 					</div>
 					<div class="clinic">
 						<img src="${pageContext.request.contextPath}/resources/images/mainClinic04.png">
-						<a href=""><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="일반클리닉 더보기"></a>
+						<a href="${pageContext.request.contextPath}/mEuksanCare1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="일반클리닉 더보기"></a>
 					</div>
 				</div><!-- clinicContentWrap end -->
 			</div><!-- clinicWrap end -->
@@ -202,7 +202,7 @@
 						<p>
 							<img src="${pageContext.request.contextPath}/resources/images/mobileMainNoticeIcon.png">
 							<span>억산한의원의 새로운 소식입니다.</span>
-							<a class="noticeMoreBtn" href=""><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
+							<a class="noticeMoreBtn" href="${pageContext.request.contextPath}/mNotice"><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
 						</p>
 						<table class="tblNotice">
 							<tr>

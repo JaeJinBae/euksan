@@ -167,12 +167,10 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">통증클리닉</a></li>
-				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li style="font-weight:bold;">추나요법</li>
+				<li style="width:265px;"><a href="" style="font-weight:bold; ">교통사고 클리닉</a></li>
 			</ul>
 		</div>
-		<div class="contentWrap">
+		<div class="contentWrap"> 
 			<div class="sideMenuWrap">
 				<img src="${pageContext.request.contextPath}/resources/images/clinicSideMenuBg.png">
 				<div class="sideMenuTopText">

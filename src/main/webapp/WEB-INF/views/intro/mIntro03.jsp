@@ -167,9 +167,9 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">통증클리닉</a></li>
+				<li><a href="">한의원 소개</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li style="font-weight:bold;">추나요법</li>
+				<li style="font-weight:bold;">둘러보기</li>
 			</ul>
 		</div>
 		<div class="contentWrap">

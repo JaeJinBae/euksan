@@ -150,11 +150,11 @@
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/euksanCare1" style="color:black;">보약</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare2">공진단</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare3">약침/봉침</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare4">침·뜸·부항</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare5">추나요법</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare1" style="color:black;">- 보약</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare2">- 공진단</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare3">- 약침/봉침</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare4">- 침·뜸·부항</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare5">- 추나요법</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
