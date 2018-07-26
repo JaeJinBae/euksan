@@ -124,26 +124,47 @@
 		width:40%;
 	}
 	.tableWrap > table th:nth-child(3){
-		width:15%;
+		width:16%;
 	}
 	.tableWrap > table th:nth-child(4){
-		width:22%;
+		width:16%;
 	}
 	.tableWrap > table th:last-child{
-		width:11%;
+		width:22%;
 	}
 	.tableWrap > table td{
 		text-align: center;
 		font-size:14px;
-		padding:10px 5px;
+		padding:10px 2px;
 		border-bottom:1px solid #e3e3e3;
 	}
 	.tableWrap > table tr td:nth-child(2){
 		text-align: left;
-		padding-left:10px;
+		padding-left:0;
 		overflow:hidden;
 		white-space:nowrap;
 		text-overflow:ellipsis;
+	}
+	.title > img{
+		width:13px;
+	}
+	.writeBtn{
+		width:100%;
+		text-align: right;
+		margin-top:20px;
+		padding:0 20px;
+	}
+	.writeBtn > a{
+		display:inline-block;
+		width:50px;
+		height:24px;
+		background: #5c4530;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
+		text-align: center;
+		line-height: 24px;
 	}
 	.page{
 		clear:both;
@@ -198,11 +219,6 @@
 		border-radius: 3px;
 		/* font-size:25px; */
 	}
-	footer{
-		/* width:100%;
-		position:absolute;
-		bottom:0; */
-	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -235,7 +251,7 @@
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li><a href="">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>공지사항</li>
+				<li>온라인 상담</li>
 			</ul>
 		</div>
 		<div class="contentWrap">
@@ -246,28 +262,34 @@
 							<th>번호</th>
 							<th>제목</th>
 							<th>작성자</th>
+							<th>상태</th>
 							<th>등록일</th>
-							<th>조회</th>
 						</tr>
 						<c:choose>
-					    <c:when test="${fn:length(list) == 0}">
-				        	<tr>
-				        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
-				        	</tr>
-					    </c:when>
-					    <c:otherwise>
-					        <c:forEach var="item" items="${list}">
-								<tr>
-									<td>${item.bno}</td>
-									<td class="title"><a href="${pageContext.request.contextPath}/mNoticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
-									<td>${item.writer}</td>
-									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
-									<td>${item.cnt}</td>
-								</tr>	
-							</c:forEach>
-					    </c:otherwise> 
-					</c:choose>
+						    <c:when test="${fn:length(list) == 0}">
+					        	<tr>
+					        		<td colspan="6" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+					        	</tr>
+						    </c:when>
+						    <c:otherwise>
+						        <c:forEach var="item" items="${list}">
+									<tr>
+										<td>${item.bno}</td>
+										<td class="title">
+											<c:if test="${item.pwtype=='x'}">
+												<img class="lockImg" src="${pageContext.request.contextPath}/resources/images/lock1.png">
+											</c:if>
+											<a href="${pageContext.request.contextPath}/mAdvicePwType${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a>
+										</td>
+										<td>${item.writer}</td>
+										<td>${item.state}</td>
+										<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
+									</tr>	
+								</c:forEach>
+						    </c:otherwise> 
+						</c:choose>
 					</table>
+					<p class="writeBtn"><a href="${pageContext.request.contextPath}/mAdviceRegister${pageMaker.makeSearch(pageMaker.cri.page)}">글쓰기</a></p>
 					<div class="page">
 						<ul>
 							<c:if test="${pageMaker.prev}">
@@ -281,7 +303,6 @@
 							<c:if test="${pageMaker.next}">
 								<li><a href="${pageMaker.makeSearch(pageMaker.endPage+1)}">&raquo;</a></li>
 							</c:if>
-							
 						</ul>
 					</div><!-- page end -->
 					<div class="searchWrap">

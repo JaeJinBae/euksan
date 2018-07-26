@@ -12,10 +12,12 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+	html,body{
+		/* height:inherit; */
+	}
 	body{
-		
+		/* position: relative; */
 	}
 	header{
 		width:100%;
@@ -26,7 +28,8 @@
 	} 
 	section{
 		width:100%;
-		margin-top:22%;
+		margin-top:25%;
+		margin-bottom:100px;
 		position: relative;
 		z-index: 9;
 	}
@@ -37,11 +40,10 @@
 	}
 	.clinicBg > img{
 		width: 100%;
-		height:150px;
 	}
 	.clinicBgText{
-		width:100%;
-		height:55px;
+		width:350px;
+		height:105px;
 		margin:auto;
 		text-align:center;
 		position: absolute;
@@ -52,15 +54,15 @@
 	}
 	.clinicBgText > h1{
 		color:white;
-		font-size:20px;
+		font-size:50px;
 		opacity:0.9;
 		letter-spacing:2px;
-		margin-bottom:15px;
-		font-family:NanumSRR;
+		margin-bottom:20px;
+		font-family:NanumSRB;
 	}
 	.clinicBgText > p{
 		color:white;
-		font-size:15px;
+		font-size:20px;
 		opacity: 0.6;
 		letter-spacing:0.7px;
 		font-family:NanumSRR;
@@ -71,30 +73,25 @@
 	}
 	.middleNav > ul{
 		overflow: hidden;
-		width:100%;
 	}
 	.middleNav > ul > li{
+		width:200px;
 		color:#fff;
 		float:left;
 		text-align: center;
-		font-size:15px;
-		padding:15px 10px;
-	}
-	.middleNav > ul > li > a > img{
-		width:20px;
+		font-size:35px;
+		padding:30px 20px;
 	}
 	.middleNav > ul > li > a{
 		color:#fff;
 	}
 	.nextArrow{
-		padding:15px 5px !important;
-	}
-	.nextArrow > img{
-		width:10px;
+		width:50px !important;
 	}
 	.contentWrap{
 		width:100%;
 		margin:0 auto;
+		overflow:hidden;
 	}
 	.contentMain{
 		width:100%;
@@ -102,11 +99,10 @@
 	.tableWrap{
 		width:100%;
 		margin:0 auto;
-		margin-top:50px;
-		margin-bottom:50px;
+		margin-top:100px;
 	}
 	.tableWrap > table{
-		width:97%;
+		width:95%;
 		margin:0 auto;
 	}
 	.tableWrap > table tr:first-child{
@@ -114,27 +110,27 @@
 		border-bottom:2px solid #5c4530;
 	}
 	.tableWrap > table th{
-		font-size:15px;
+		font-size:30px;
 		padding:12px 5px;
 	}
 	.tableWrap > table th:first-child{
-		width:11%;
+		width:50px;
 	}
 	.tableWrap > table th:nth-child(2){
-		width:40%;
+		width:385px;
 	}
 	.tableWrap > table th:nth-child(3){
-		width:15%;
+		width:60px;
 	}
 	.tableWrap > table th:nth-child(4){
-		width:22%;
+		width:90px;
 	}
 	.tableWrap > table th:last-child{
-		width:11%;
+		width:45px;
 	}
 	.tableWrap > table td{
 		text-align: center;
-		font-size:14px;
+		font-size:25px;
 		padding:10px 5px;
 		border-bottom:1px solid #e3e3e3;
 	}
@@ -147,16 +143,16 @@
 	}
 	.page{
 		clear:both;
-		width:100%; 
-		margin:40px auto;
-		margin-bottom:40px;
+		width:626px; 
+		margin:70px auto;
+		margin-bottom:50px;
 	}
 	.page > ul{
 		text-align: center;
 	}
 	.page ul li{
-		width:25px;
-		height:25px;
+		width:45px;
+		height:40px;
 		margin:0 auto;
 		list-style: none;
 		display: inline-block;
@@ -171,32 +167,31 @@
 		color:white;
 	}
 	.page ul li a{
-		font-size:1.2em;
-		line-height: 25px;
-	}
-	
-	.searchWrap{
-		text-align: center;
-	}
-	.searchWrap > select{
-		/* width:155px;
-		height:50px;
-		font-size:20px;  */
-	}
-	.searchWrap > input{
-		/* width:150px;
-		height:50px;
-		margin-left:12px;
-		margin-right:12px; */
+		font-size:2em;
+		line-height: 40px;
 	}
 	#searchBtn{
-		width:40px;
-		height:17px;
+		width:65px;
+		height:50px;
 		background: #5c4530;
 		color:white;
 		border:none;
 		border-radius: 3px;
-		/* font-size:25px; */
+		font-size:25px;
+	}
+	.searchWrap{
+		text-align: center;
+	}
+	.searchWrap > select{
+		width:155px;
+		height:50px;
+		font-size:20px; 
+	}
+	.searchWrap > input{
+		width:150px;
+		height:50px;
+		margin-left:12px;
+		margin-right:12px;
 	}
 	footer{
 		/* width:100%;
@@ -235,7 +230,7 @@
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li><a href="">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>공지사항</li>
+				<li style="font-weight:bold;">공지사항</li>
 			</ul>
 		</div>
 		<div class="contentWrap">

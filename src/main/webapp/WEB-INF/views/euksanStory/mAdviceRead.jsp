@@ -103,45 +103,49 @@
 	.tableWrap{
 		width:100%;
 		margin:0 auto;
+		margin-top:30px;
 	}
-	.tableWrap > table{
-		width:95%;
-		margin:50px auto;
-		margin-bottom:20px;
+	.custom{
+		width:98%;
+		margin:0 auto;
 	}
-	.tableWrap > table tr{
+	.custom > table{
+		width:100%;
+		margin:0 auto;
+		border-top:3px solid lightgray;
 		border-bottom:2px solid #e3e3e3;
+		text-align:left;
 	}
-	.tableWrap > table tr:first-child{
-		border-top:2px solid #5c4530;
-		border-bottom:2px solid #e3e3e3;
+	.custom > table td{
+		padding:10px 15px;
+		font-size:12px;
+		display:inline-block;
 	}
-	.tableWrap > table tr:last-child{
-		border-bottom:2px solid #5c4530;
+	.custom > table tr:last-child td{
+		padding: 10px 4px;
 	}
-	.tableWrap > table td{
-		text-align: left;
-		font-size:14px;
-		padding:10px;
+	.boardTitle{
+		font-size:18px;
+	}
+	.custom > table tr:last-child td:first-child{
 		padding-left:15px;
 	}
-	.tableWrap > table tr:nth-child(2) td span{
-		margin-left:12px;
-	}
-	.tableWrap > table tr:nth-child(2) td span:first-child{
-		margin-left:0;
-	}
-	.tableWrap > table td >h1{
-		font-size:20px;
-	}
-	.golist{
+	.custom>table tr:first-child td{
+		border-bottom:2px solid #e3e3e3;
 		width:100%;
-		text-align: right;
-		margin-top:20px;
-		padding:0 30px;
 	}
-	.golist a{
-		display:inline-block;
+	.customContent{
+		width:100%;
+		margin:0 auto;
+		padding:20px 15px;
+		text-align: left;
+		border-bottom:3px solid lightgray;
+	}
+	.btnWrap{
+		margin-top:50px;
+		text-align: right;
+	}
+	.btnWrap button{
 		width:50px;
 		height:24px;
 		background: #5c4530;
@@ -149,14 +153,48 @@
 		border:none;
 		border-radius: 3px;
 		font-size:15px;
-		text-align: center;
-		line-height: 24px;
 	}
-	footer{
-		/* width:100%;
-		position:absolute;
-		bottom:0; */
+	.reply{
+		width:98%;
+		margin:100px auto;
 	}
+	.reply > table{
+		width:100%;
+		margin:0 auto;
+		border-top:3px solid lightgray;
+		border-bottom:2px solid #e3e3e3;
+		text-align:left;
+	}
+	.reply > table td{
+		padding:10px 15px;
+		font-size:12px;
+		display:inline-block;
+	}
+	.reply > table tr:last-child td{
+		padding: 10px 4px;
+	}
+	.boardTitle{
+		font-size:18px;
+	}
+	.reply > table tr:last-child td:first-child{
+		padding-left:15px;
+	}
+	.reply > table tr:first-child td{
+		border-bottom:2px solid #e3e3e3;
+		width:100%;
+	}
+	.replyContent{
+		width:100%;
+		max-width:970px;
+		margin:0 auto;
+		padding:20px 15px;
+		text-align: left;
+		border-bottom:3px solid lightgray;
+	}
+	.replyContent img{
+		max-width:300px;
+	}
+	
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -182,29 +220,56 @@
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li><a href="">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>공지사항</li>
+				<li>온라인 상담</li>
 			</ul>
 		</div>
 		<div class="contentWrap">
 			<div class="contentMain">
 				<div class="tableWrap">
-					<table>
-						<tr>
-							<td><h1>${item.title}</h1></td>
-						</tr>
-						<tr>
-							<td>
-								<span>작성자 : </span>${item.writer}
-								<span>작성일 : </span><fmt:formatDate type="date" value="${item.regdate}"/>
-								<span>조회 : </span>${item.cnt}
-							</td>
-						</tr>
-						<tr>
-							<td>${item.content}</td>
-						</tr>
-					</table>
-				</div><!-- tableWrap end -->
-				<p class="golist"><a href="${pageContext.request.contextPath}/mNotice${pageMaker.makeSearch(pageMaker.cri.page)}">목록</a></p> 
+					<div class="custom">
+						<table>
+							<tr>
+								<td colspan="4"><h1 class="boardTitle">${item.title}</h1></td>
+							</tr>
+							<tr>
+								<td>작성자: ${item.writer}</td>
+								<td>등록일: <fmt:formatDate type="date" value="${item.regdate}"/>
+								<td>답변상태: ${item.state}</td>
+								<td>조회: ${item.cnt}</td>
+							</tr>
+						</table>
+						<div class="customContent">
+							${item.content}
+						</div>
+						<div class="btnWrap">
+							<a href="${pageContext.request.contextPath}/mAdvice${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn"><button>목록</button></a>
+							<!-- <a href="adviceUpdate"><button>수정</button></a>
+							<a href="adviceDelete"><button>삭제</button></a> -->
+							<c:if test="${item.pwtype=='x'}">
+								<a href="${pageContext.request.contextPath}/mAdviceUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
+								<a href="${pageContext.request.contextPath}/mAdviceDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
+							</c:if>
+						</div>
+					</div><!-- custom end -->
+					<div class="reply">
+						<c:if test="${item.state=='답변완료'}">
+							<table>
+								<tr>
+									<td colspan="4"><h1 class="boardTitle">Re] ${item.title}</h1></td>
+								</tr>
+								<tr>
+									<td>작성자: 관리자</td>
+									<td>답변일: <fmt:formatDate type="date" value="${reply.regdate}"/></td>
+									<td>답변상태: 답변완료</td>
+									<td>조회수: ${item.cnt}</td>
+								</tr>
+							</table>
+						<div class="replyContent">
+							${reply.replytext}
+						</div>
+						</c:if>				
+					</div><!-- reply end -->
+				</div><!-- tableWrap end --> 
 			</div>
 		</div>
 	</section>

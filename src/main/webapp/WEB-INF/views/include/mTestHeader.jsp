@@ -4,25 +4,25 @@
 	.headerWrap{
 		width:100%;
 		text-align: center;
-		margin-top:13px;
-		margin-bottom:10px;
+		margin-top:40px;
+		margin-bottom:30px;
 		position: relative;
 	}
 	.logo{
-		/* width:350px; */
+		width:350px;
 		margin:0 auto;
 	}
 	.logo > img{
-		width:120px;
+		width:350px;
 	}
 	.menuIcon{
-		width:30px;
+		width:110px;
 		position:absolute;
-		top:10px;
+		top:25px;
 		right:20px;
 	}
 	.menuIcon > img{
-		width:40px;
+		width:110px;
 	}
 	.sidenav {
 	    height: 100%; /* 100% Full-height */
@@ -33,67 +33,65 @@
 	    right: 0;
 	    background: #362719;
 	    overflow-x: hidden; /* Disable horizontal scroll */
-	    padding-top: 40px; /* Place content 60px from the top */
+	    padding-top: 60px; /* Place content 60px from the top */
 	    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 	}
 	.homeBtn{
 		position: absolute;
-	    top: 17px;
+	    top: 40px;
 	    left:0;
-	    font-size: 18px;
-	    margin-left: 20px;
+	    font-size: 44px;
+	    margin-left: 50px;
 	    color:#fff;
 	}
 	.homeBtn > img{
-		width:21px;
+		width:50px;
 	}
 	.homeBtn > span{
-		margin-left:10px;
+		margin-left:15px;
 	}
 	.sidenav .closebtn {
 	    position: absolute;
-	    top:5px;
-	    right: 16px;
-	    font-size: 40px;
+	    top:3px;
+	    right: 25px;
+	    font-size: 100px;
 	    margin-left: 50px;
 	    color:#fff;
 	}
 	.sidenav > hr{
-		margin-top:15px;
-		margin-bottom:0;
+		margin-top:65px;
+		margin-bottom:25px;
 		border:0;
-		border-top:2px solid #fff;
+		border-top:3px solid #fff;
 	}
 	.sidenav .mainMenu > li{
-		/* margin-bottom:13px; */
+		margin-bottom:25px;
 		border-bottom:1px solid #fff;
 		text-align: left;
 	}
 	.sidenav .mainMenu > li > p {
-	    padding: 13px 8px 13px 20px;
+	    padding: 8px 8px 25px 45px;
 	    text-decoration: none;
-	    font-size: 16px;
+	    font-size: 40px;
 	    color: #fff;
 	    display: block;
 	    transition: 0.3s;
+	    border-bottom:1px solid #fff;
 	}
 	.sidenav .mainMenu > li > p > img{
-		width:20px;
+		width:50px;
 		float:right;
-		margin-right:10px;
+		margin-right:30px;
 	}
 	.subMenu{
 		display:none;
-		margin:0 0px 15px 40px;
+		margin:25px 0px 25px 100px;
 	}
 	.subNavUl > li{
-		margin:10px 0;
-	}
-	.subNavUl > li:first-child{
-		margin-top:0;
+		margin:20px 0;
 	}
 	.subNavUl > li > a{
-		font-size:15px;
+		font-size:40px;
 		color:#fff;
 	}
 	/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -105,8 +103,8 @@
 <script>
 	// sideNavBar
 	function openNav() {
-	    document.getElementById("mySidenav").style.width = "250px";
-	    document.getElementById("main").style.marginRight = "250px";
+	    document.getElementById("mySidenav").style.width = "550px";
+	    document.getElementById("main").style.marginRight = "550px";
 	    document.body.style.backgroundColor = "rgba(54,39,25,0.4)";
 	}
 	function closeNav() {

@@ -46,7 +46,7 @@ public class MobileHomeController {
 	public String mobileMain() {
 		logger.info("mobile Home.");
 		
-		return "main/mobileIndex";
+		return "main/mobileIndex2";
 	}
 	
 	@RequestMapping(value = "/mIntro1", method = RequestMethod.GET)

@@ -98,69 +98,71 @@
 	}
 	.contentMain{
 		width:100%;
-		margin-bottom:50px;
 	}
 	.tableWrap{
 		width:100%;
 		margin:0 auto;
+		margin-top:50px;
+		margin-bottom:50px;
 	}
 	.tableWrap > table{
+		width:97%;
+		margin:0 auto;
+	}
+	.checkWrap{
+		/* width:500px; */
 		width:95%;
-		margin:50px auto;
-		margin-bottom:20px;
+		margin:0 auto;
+		background: #f8f8f8;
+		padding:30px 25px;
+		margin-bottom:180px;
 	}
-	.tableWrap > table tr{
-		border-bottom:2px solid #e3e3e3;
+	hr{
+		margin:15px 0;
 	}
-	.tableWrap > table tr:first-child{
-		border-top:2px solid #5c4530;
-		border-bottom:2px solid #e3e3e3;
-	}
-	.tableWrap > table tr:last-child{
-		border-bottom:2px solid #5c4530;
-	}
-	.tableWrap > table td{
-		text-align: left;
-		font-size:14px;
-		padding:10px;
-		padding-left:15px;
-	}
-	.tableWrap > table tr:nth-child(2) td span{
-		margin-left:12px;
-	}
-	.tableWrap > table tr:nth-child(2) td span:first-child{
-		margin-left:0;
-	}
-	.tableWrap > table td >h1{
-		font-size:20px;
-	}
-	.golist{
-		width:100%;
-		text-align: right;
-		margin-top:20px;
-		padding:0 30px;
-	}
-	.golist a{
-		display:inline-block;
-		width:50px;
+	.btnOK{
+		margin-left:10px;
+		width:38px;
 		height:24px;
 		background: #5c4530;
 		color:white;
 		border:none;
 		border-radius: 3px;
 		font-size:15px;
-		text-align: center;
-		line-height: 24px;
 	}
-	footer{
-		/* width:100%;
-		position:absolute;
-		bottom:0; */
+	.checkWrap button:not(.btnOK){
+		width:65px;
+		height:24px;
+		background: #5c4530;
+		color:white;
+		border:none;
+		border-radius: 3px;
+		font-size:15px;
 	}
 </style>
 <script type="text/javascript">
 	$(function(){
-		
+		/* 비밀번호 확인 */
+        $(".btnOK").click(function(){
+        	var pw=$("input[type='password']").val();
+        	var bno=$("input[type='hidden']").val();
+        	var sendData={bno:bno,pw:pw};
+			$.ajax({
+				url:"advicePWcheck2",
+				type:"post",
+				headers:{"Content-Type":"application/json"},
+				dataType:"text",
+				data:JSON.stringify(sendData),//json객체를 json string 으로 변경해줌
+				success:function(result){
+					console.log(result);
+					if(result=='ok'){
+						location.href="${pageContext.request.contextPath}/mAdviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno="+bno;
+					}else{
+						alert("비밀번호가 틀립니다.");
+					}
+				}
+			})
+        });
 	});
 </script>
 </head>
@@ -182,29 +184,20 @@
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li><a href="">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>공지사항</li>
+				<li>온라인 상담</li>
 			</ul>
 		</div>
 		<div class="contentWrap">
 			<div class="contentMain">
 				<div class="tableWrap">
-					<table>
-						<tr>
-							<td><h1>${item.title}</h1></td>
-						</tr>
-						<tr>
-							<td>
-								<span>작성자 : </span>${item.writer}
-								<span>작성일 : </span><fmt:formatDate type="date" value="${item.regdate}"/>
-								<span>조회 : </span>${item.cnt}
-							</td>
-						</tr>
-						<tr>
-							<td>${item.content}</td>
-						</tr>
-					</table>
+					<div class="checkWrap">
+						<p>비공개 글 입니다.</p>
+						<p>글 작성시 입력하신 비밀번호를 입력해주세요.</p>
+						<hr>
+						<input type="hidden" value="${item.bno}">
+						비밀번호 <input type="password" class="pwinput"><button class="btnOK">확인</button>&nbsp;<a href="mAdvice${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록으로</button></a>
+					</div>
 				</div><!-- tableWrap end -->
-				<p class="golist"><a href="${pageContext.request.contextPath}/mNotice${pageMaker.makeSearch(pageMaker.cri.page)}">목록</a></p> 
 			</div>
 		</div>
 	</section>

@@ -212,7 +212,7 @@
     		var searchType = encodeURIComponent(s);
     		var k=$("input[name='keyword']").val();
     		var keyword = encodeURIComponent(k);
-    		location.href="mNotice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+    		location.href="mBroadcasting${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
 	});
 </script>
@@ -235,7 +235,7 @@
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li><a href="">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>공지사항</li>
+				<li>언론보도</li>
 			</ul>
 		</div>
 		<div class="contentWrap">
@@ -259,7 +259,7 @@
 					        <c:forEach var="item" items="${list}">
 								<tr>
 									<td>${item.bno}</td>
-									<td class="title"><a href="${pageContext.request.contextPath}/mNoticeRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
+									<td class="title"><a href="${pageContext.request.contextPath}/mBroadcastingRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
 									<td>${item.writer}</td>
 									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>
 									<td>${item.cnt}</td>

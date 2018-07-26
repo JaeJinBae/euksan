@@ -12,10 +12,9 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-	body{
-		
+	*:not('.footer', '.tableWrap'){
+		font-size:30px;
 	}
 	header{
 		width:100%;
@@ -26,7 +25,8 @@
 	} 
 	section{
 		width:100%;
-		margin-top:22%;
+		margin-top:25%;
+		margin-bottom:100px;
 		position: relative;
 		z-index: 9;
 	}
@@ -37,11 +37,10 @@
 	}
 	.clinicBg > img{
 		width: 100%;
-		height:150px;
 	}
 	.clinicBgText{
-		width:100%;
-		height:55px;
+		width:350px;
+		height:105px;
 		margin:auto;
 		text-align:center;
 		position: absolute;
@@ -52,15 +51,15 @@
 	}
 	.clinicBgText > h1{
 		color:white;
-		font-size:20px;
+		font-size:50px;
 		opacity:0.9;
 		letter-spacing:2px;
-		margin-bottom:15px;
-		font-family:NanumSRR;
+		margin-bottom:20px;
+		font-family:NanumSRB;
 	}
 	.clinicBgText > p{
 		color:white;
-		font-size:15px;
+		font-size:20px;
 		opacity: 0.6;
 		letter-spacing:0.7px;
 		font-family:NanumSRR;
@@ -71,34 +70,28 @@
 	}
 	.middleNav > ul{
 		overflow: hidden;
-		width:100%;
 	}
 	.middleNav > ul > li{
+		width:200px;
 		color:#fff;
 		float:left;
 		text-align: center;
-		font-size:15px;
-		padding:15px 10px;
-	}
-	.middleNav > ul > li > a > img{
-		width:20px;
+		font-size:35px;
+		padding:30px 20px;
 	}
 	.middleNav > ul > li > a{
 		color:#fff;
 	}
 	.nextArrow{
-		padding:15px 5px !important;
-	}
-	.nextArrow > img{
-		width:10px;
+		width:50px !important;
 	}
 	.contentWrap{
 		width:100%;
 		margin:0 auto;
+		overflow:hidden;
 	}
 	.contentMain{
 		width:100%;
-		margin-bottom:50px;
 	}
 	.tableWrap{
 		width:100%;
@@ -106,8 +99,7 @@
 	}
 	.tableWrap > table{
 		width:95%;
-		margin:50px auto;
-		margin-bottom:20px;
+		margin:100px auto;
 	}
 	.tableWrap > table tr{
 		border-bottom:2px solid #e3e3e3;
@@ -121,18 +113,14 @@
 	}
 	.tableWrap > table td{
 		text-align: left;
-		font-size:14px;
+		font-size:30px;
 		padding:10px;
-		padding-left:15px;
 	}
-	.tableWrap > table tr:nth-child(2) td span{
-		margin-left:12px;
-	}
-	.tableWrap > table tr:nth-child(2) td span:first-child{
-		margin-left:0;
+	.tableWrap > table tr:last-child td {
+		font-size:14px;
 	}
 	.tableWrap > table td >h1{
-		font-size:20px;
+		font-size:40px;
 	}
 	.golist{
 		width:100%;
@@ -182,7 +170,7 @@
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li><a href="">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>공지사항</li>
+				<li style="font-weight:bold;">공지사항</li>
 			</ul>
 		</div>
 		<div class="contentWrap">

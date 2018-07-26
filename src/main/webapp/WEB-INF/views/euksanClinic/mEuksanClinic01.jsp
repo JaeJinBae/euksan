@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 	body{
 		
@@ -23,7 +23,7 @@
 	} 
 	section{
 		width:100%;
-		margin-top:25%;
+		margin-top:22%;
 		position: relative;
 		z-index: 9;
 	}
@@ -34,10 +34,11 @@
 	}
 	.clinicBg > img{
 		width: 100%;
+		height:150px;
 	}
 	.clinicBgText{
-		width:350px;
-		height:105px;
+		width:100%;
+		height:55px;
 		margin:auto;
 		text-align:center;
 		position: absolute;
@@ -48,15 +49,15 @@
 	}
 	.clinicBgText > h1{
 		color:white;
-		font-size:50px;
+		font-size:20px;
 		opacity:0.9;
 		letter-spacing:2px;
-		margin-bottom:20px;
-		font-family:NanumSRB;
+		margin-bottom:15px;
+		font-family:NanumSRR;
 	}
 	.clinicBgText > p{
 		color:white;
-		font-size:20px;
+		font-size:15px;
 		opacity: 0.6;
 		letter-spacing:0.7px;
 		font-family:NanumSRR;
@@ -67,79 +68,33 @@
 	}
 	.middleNav > ul{
 		overflow: hidden;
+		width:100%;
 	}
 	.middleNav > ul > li{
-		width:200px;
 		color:#fff;
 		float:left;
 		text-align: center;
-		font-size:35px;
-		padding:30px 20px;
+		font-size:15px;
+		padding:15px 10px;
+	}
+	.middleNav > ul > li > a > img{
+		width:20px;
 	}
 	.middleNav > ul > li > a{
 		color:#fff;
 	}
 	.nextArrow{
-		width:50px !important;
+		padding:15px 5px !important;
+	}
+	.nextArrow > img{
+		width:10px;
 	}
 	.contentWrap{
 		width:100%;
 		margin:0 auto;
-		overflow:hidden;
-	}
-	.sideMenuWrap{
-		display:none;
-		width:20%;
-		margin-top:35px;
-		float:left;
-		position: relative;
-	}.sideMenuWrap > img{
-		width:100%;
-	}
-	.sideMenuTopText{
-		position: absolute;
-		top:36px;
-		left:33px;
-	}
-	.sideMenuTopText > h1{
-		font-family:궁서;
-		color:#312322;
-	}
-	.sideMenuTopText > hr{
-		border:0;
-		border-top:5px solid #453534;
-		width:50px;
-		margin:0;
-		margin-top:17px;
-		margin-left:10px;
-	}
-	.sideMenuNav{
-		width:100%;
-	}
-	.sideMenuNav > ul{
-		width:95%;
-		margin:0 auto;
-		margin-top:25px;
-	}
-	.sideMenuNav > ul > li{
-		padding:15px 0px 15px 15px;
-		border-bottom:3px solid #999;
-	}
-	.sideMenuNav > ul > li:last-child{
-		border:0;
-		margin-bottom:25px;
-	}
-	.sideMenuNav > ul > li > a{
-		font-family:NanumSRB;
-		font-size:25px;
-	}
-	.sideMenuNav > img{
-		width:200px;
-		margin-top:10px;
 	}
 	.contentMain{
 		width:100%;
-		float:right;
 	}
 	.contentMain > img{
 		width:102%;
@@ -167,29 +122,12 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">억산 클리닉</a></li>
+				<li><a href="">통증 클리닉</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li style="font-weight:bold; width:220px;">유산 후 조리</li>
+				<li>목디스크</li>
 			</ul>
 		</div>
 		<div class="contentWrap">
-			<div class="sideMenuWrap">
-				<img src="${pageContext.request.contextPath}/resources/images/clinicSideMenuBg.png">
-				<div class="sideMenuTopText">
-					<h1>통증</h1>
-					<h1>클리닉</h1>
-					<hr>
-				</div><!-- sideMenuTopText end -->
-				<div class="sideMenuNav">
-					<ul>
-						<li><a href="">추나요법</a></li>
-						<li><a href="">목·허리 디스크</a></li>
-						<li><a href="">관절통증</a></li>
-					</ul>
-					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
-					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
-				</div>
-			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
 				<img src="${pageContext.request.contextPath}/resources/images/painClinicContent011.png">
 			</div>
