@@ -107,6 +107,7 @@
 		margin:auto;
 		margin-top:14px;
 		background: #fff;
+		box-shadow: 1px 1px 7px grey;
 	}
 	.notice > img{
 		display:block;
@@ -164,13 +165,17 @@
 		top:140px;
 		left:60px;
 	}
+	.bottomContentText > h1{
+		font-family:NanumSRB;
+		color:#541300;
+	}
 	.bottomContentText > p{
 		margin-top:19px;
 		margin-left:20px;
 		font-size:20px;
 		font-weight:bold;
 		color:#666;
-		
+		font-family:NanumSRB;
 	}
 	.bottomSlider{
 		float:right;

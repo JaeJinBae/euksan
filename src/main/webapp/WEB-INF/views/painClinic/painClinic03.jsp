@@ -81,6 +81,8 @@
 	.sideMenuTopText > h1{
 		font-family:궁서;
 		color:#312322;
+		font-size:35px;
+		font-weight:500;
 	}
 	.sideMenuTopText > hr{
 		border:0;
@@ -100,7 +102,7 @@
 	}
 	.sideMenuNav > ul > li{
 		padding:15px 0px 15px 15px;
-		border-bottom:3px solid #999;
+		border-bottom:2px solid #999;
 	}
 	.sideMenuNav > ul > li:last-child{
 		border:0;
