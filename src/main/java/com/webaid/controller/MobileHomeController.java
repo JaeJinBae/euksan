@@ -43,10 +43,14 @@ public class MobileHomeController {
 	private ReplyService rService;
 	
 	@RequestMapping(value = "/mMain", method = RequestMethod.GET)
-	public String mobileMain() {
+	public String mobileMain(Model model) {
 		logger.info("mobile Home.");
 		
-		return "main/mobileIndex2";
+		List<NoticeVO> list = nService.selectAll();
+		
+		model.addAttribute("list",list);
+		
+		return "main/mobileIndex";
 	}
 	
 	@RequestMapping(value = "/mIntro1", method = RequestMethod.GET)

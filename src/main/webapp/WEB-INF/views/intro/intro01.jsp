@@ -35,7 +35,7 @@
 		width: 100%;
 	}
 	.clinicBgText{
-		width:350px;
+		width:100%;
 		height:105px;
 		margin:auto;
 		text-align:center;
@@ -86,7 +86,7 @@
 	}
 	.sideMenuTopText > hr{
 		border:0;
-		border-top:5px solid #453534;
+		border-top:4px solid #453534;
 		width:50px;
 		margin:0;
 		margin-top:17px;
@@ -138,8 +138,8 @@
 		<div class="clinicBg">
 			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
 			<div class="clinicBgText">
-				<h1>통증클리닉</h1>
-				<p>통증에 따른 억산한의원의 클리닉</p>
+				<h1>한의원 소개</h1>
+				<p>질환뿐만 아니라 마음까지 치료하는 억산한의원입니다.</p>
 			</div><!-- clinicBgText end -->
 		</div><!-- clinicBg end -->
 		<div class="contentWrap">
@@ -152,17 +152,17 @@
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="" style="color:black;">인사말</a></li>
-						<li><a href="">진료안내</a></li>
-						<li><a href="">둘러보기</a></li>
-						<li><a href="">오시는 길</a></li>
+						<li><a href="${pageContext.request.contextPath}/intro1" style="color:black;">- 인사말</a></li>
+						<li><a href="${pageContext.request.contextPath}/intro2">- 진료안내</a></li>
+						<li><a href="${pageContext.request.contextPath}/intro3">- 둘러보기</a></li>
+						<li><a href="${pageContext.request.contextPath}/intro4">- 오시는 길</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
 				</div>
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicTest.png">
+				<img src="${pageContext.request.contextPath}/resources/images/intro1.png">
 			</div>
 		</div>
 	</section>

@@ -184,7 +184,7 @@
 					<ul class="subNavUl">
 						<li><a href="${pageContext.request.contextPath}/mEuksanCare1">- 보약</a></li>
 						<li><a href="${pageContext.request.contextPath}/mEuksanCare2">- 공진단</a></li>
-						<li><a href="${pageContext.request.contextPath}/mEuksanCare3">- 약침/봉침</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanCare3">- 약침·봉침</a></li>
 						<li><a href="${pageContext.request.contextPath}/mEuksanCare4">- 침·뜸·부항</a></li>
 						<li><a href="${pageContext.request.contextPath}/mEuksanCare5">- 추나요법</a></li>
 					</ul>

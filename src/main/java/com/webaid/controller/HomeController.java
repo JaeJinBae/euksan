@@ -53,31 +53,42 @@ public class HomeController {
 	public String deviceCheck(HttpServletRequest req, Model model) {
 		logger.info("deviceCheck.");
 		
+		List<NoticeVO> list=nService.selectAll();
+		
 		Device device=DeviceUtils.getCurrentDevice(req);
 		String deviceType="unknown";
 		
 		if(device == null){
 			deviceType="unknown";
 			logger.info(deviceType);
+			model.addAttribute("list", list);
+			
 			return "main/pcIndex";
 		}
 		
 		if(device.isMobile()){
 			deviceType="mobile";
 			logger.info(deviceType);
+			model.addAttribute("list", list);
+			
 			return "main/mobileIndex";
 		}else{
 			deviceType="normal";
 			logger.info(deviceType);
+			model.addAttribute("list", list);
+			
 			return "main/pcIndex";
 		}
 	}	
 	
 	// ====================== pc, tablet =========================================
 	@RequestMapping(value = "/pcMain", method = RequestMethod.GET)
-	public String pcMain() {
-		logger.info("mobile Home.");
+	public String pcMain(Model model) {
+		logger.info("pc Home.");
 		
+		List<NoticeVO> list=nService.selectAll();
+		
+		model.addAttribute("list",list);
 		
 		return "main/pcIndex";
 	}

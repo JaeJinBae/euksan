@@ -97,7 +97,7 @@
 		width:100%;
 	}
 	.contentMain > img{
-		width:102%;
+		width:100%;
 	}
 </style>
 <script type="text/javascript">
@@ -114,22 +114,22 @@
 		<div class="clinicBg">
 			<img src="${pageContext.request.contextPath}/resources/images/painClinicBg.png">
 			<div class="clinicBgText">
-				<h1>통증클리닉</h1>
-				<p>통증에 따른 억산한의원의 클리닉</p>
+				<h1>한의원 소개</h1>
+				<p>질환뿐만 아니라 마음까지 치료하는 억산한의원입니다.</p>
 			</div><!-- clinicBgText end -->
 		</div><!-- clinicBg end -->
 		<div class="middleNav">
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">통증 클리닉</a></li>
+				<li><a href="">한의원 소개</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>목디스크</li>
+				<li>진료안내</li>
 			</ul>
 		</div>
 		<div class="contentWrap">
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicContent011.png">
+				<img src="${pageContext.request.contextPath}/resources/images/intro2.png">
 			</div>
 		</div>
 	</section>

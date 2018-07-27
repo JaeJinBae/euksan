@@ -35,7 +35,7 @@
 		width: 100%;
 	}
 	.clinicBgText{
-		width:350px;
+		width:100%;
 		height:105px;
 		margin:auto;
 		text-align:center;
@@ -81,10 +81,12 @@
 	.sideMenuTopText > h1{
 		font-family:궁서;
 		color:#312322;
+		font-size:35px;
+		font-weight:500;
 	}
 	.sideMenuTopText > hr{
 		border:0;
-		border-top:5px solid #453534;
+		border-top:4px solid #453534;
 		width:50px;
 		margin:0;
 		margin-top:17px;
@@ -100,7 +102,7 @@
 	}
 	.sideMenuNav > ul > li{
 		padding:15px 0px 15px 15px;
-		border-bottom:3px solid #999;
+		border-bottom:2px solid #999;
 	}
 	.sideMenuNav > ul > li:last-child{
 		border:0;
@@ -134,10 +136,10 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/euksanCareBg.png">
 			<div class="clinicBgText">
-				<h1>통증클리닉</h1>
-				<p>통증에 따른 억산한의원의 클리닉</p>
+				<h1>억산치료법</h1>
+				<p>환자 상태에 따른 맞춤 치료를 적용하는 억산한의원</p>
 			</div><!-- clinicBgText end -->
 		</div><!-- clinicBg end -->
 		<div class="contentWrap">
@@ -150,11 +152,11 @@
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/euksanCare1">보약</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare2">공진단</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare3">약침/봉침</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare4">침·뜸·부항</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare5" style="color:black;">추나요법</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare1">- 보약</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare2">- 공진단</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare3">- 약침·봉침</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare4">- 침·뜸·부항</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare5" style="color:black;">- 추나요법</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">

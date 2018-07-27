@@ -97,7 +97,7 @@
 		width:100%;
 	}
 	.contentMain > img{
-		width:102%;
+		width:100%;
 	}
 </style>
 <script type="text/javascript">
@@ -129,7 +129,7 @@
 		</div>
 		<div class="contentWrap">
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicContent011.png">
+				<img src="${pageContext.request.contextPath}/resources/images/painClinic03.png">
 			</div>
 		</div>
 	</section>

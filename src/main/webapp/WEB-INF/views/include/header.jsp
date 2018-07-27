@@ -142,14 +142,14 @@
 					<ul class="subNavUl">
 						<li><a href="${pageContext.request.contextPath}/euksanCare1">보약</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanCare2">공진단</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanCare3">약침/봉침</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanCare3">약침·봉침</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanCare4">침·뜸·부항</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanCare5">추나요법</a></li>
 					</ul>
 				</div>
 			</li>
 			<li>
-				<a href="">억산 이야기</a>
+				<a href="${pageContext.request.contextPath}/notice">억산 이야기</a>
 				<div class="subNav">
 					<ul class="subNavUl">
 						<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>

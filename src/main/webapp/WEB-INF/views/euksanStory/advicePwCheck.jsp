@@ -38,7 +38,7 @@
 		width: 100%;
 	}
 	.clinicBgText{
-		width:350px;
+		width:100%;
 		height:105px;
 		margin:auto;
 		text-align:center;
@@ -71,8 +71,6 @@
 	.sideMenuWrap{
 		width:200px;
 		margin-top:35px;
-		margin-bottom:50px;
-		margin-left:20px;
 		float:left;
 		position: relative;
 	}.sideMenuWrap > img{
@@ -86,10 +84,12 @@
 	.sideMenuTopText > h1{
 		font-family:궁서;
 		color:#312322;
+		font-size:35px;
+		font-weight:500;
 	}
 	.sideMenuTopText > hr{
 		border:0;
-		border-top:5px solid #453534;
+		border-top:4px solid #453534;
 		width:50px;
 		margin:0;
 		margin-top:17px;
@@ -105,7 +105,7 @@
 	}
 	.sideMenuNav > ul > li{
 		padding:15px 0px 15px 15px;
-		border-bottom:3px solid #999;
+		border-bottom:2px solid #999;
 	}
 	.sideMenuNav > ul > li:last-child{
 		border:0;
@@ -210,25 +210,25 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/painClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/euksanStoryBg.png">
 			<div class="clinicBgText">
-				<h1>통증클리닉</h1>
-				<p>통증에 따른 억산한의원의 클리닉</p>
+				<h1>억산이야기</h1>
+				<p>환자와 소통하며 편하게 다가가는 억산이야기</p>
 			</div><!-- clinicBgText end -->
 		</div><!-- clinicBg end -->
 		<div class="contentWrap">
 			<div class="sideMenuWrap">
 				<img src="${pageContext.request.contextPath}/resources/images/clinicSideMenuBg.png">
 				<div class="sideMenuTopText">
-					<h1>통증</h1>
-					<h1>클리닉</h1>
+					<h1>억산</h1>
+					<h1>이야기</h1>
 					<hr>
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/notice">공지사항</a></li>
-						<li><a href="${pageContext.request.contextPath}/broadcasting">언론보도</a></li>
-						<li><a href="${pageContext.request.contextPath}/advice">온라인 상담</a></li>
+						<li><a href="${pageContext.request.contextPath}/notice">- 공지사항</a></li>
+						<li><a href="${pageContext.request.contextPath}/broadcasting">- 언론보도</a></li>
+						<li><a href="${pageContext.request.contextPath}/advice" style="color:black;">- 온라인 상담</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 	header{
 		width:100%;
@@ -21,7 +24,7 @@
 	}
 	section{
 		width:100%;
-		margin-top:25%;
+		margin-top:22%;
 		position: relative;
 		z-index: 1;
 	}
@@ -30,18 +33,19 @@
 	}
 	.mainBanner div img{
 		width:100%;
+		height:150px;
 	}
 	.clinicWrap{
 		width:100%;
-		background: url("${pageContext.request.contextPath}/resources/images/clinicBg.png");
-		padding-top:50px;
-		margin-bottom:50px;
+		background: url("${pageContext.request.contextPath}/resources/images/mainBg.png");
+		padding-top:15px; 
+		margin-bottom:20px;
 	}
 	.clinicIntroImg{
 		display:block;
 		width:75%;
 		margin:0 auto;
-		margin-bottom:50px;
+		margin-bottom:20px;
 	}
 	.clinicContentWrap{
 		width:100%;
@@ -61,15 +65,16 @@
 		left:25px;
 	}
 	.clinic > a > img{
-		width:200px;
+		width:50px;
 	}
 	.secondContentWrap{
 		width:100%;
-		margin-bottom:50px;
+		margin-bottom:20px;
 	}
 	.mainInfo{
 		width:100%;
 		background: url("${pageContext.request.contextPath}/resources/images/infoBg.png");
+		margin-bottom:20px;
 	}
 	.mainInfo > img{
 		width:100%;
@@ -77,12 +82,12 @@
 	.mainNotice{
 		width:100%;
 		background: url("${pageContext.request.contextPath}/resources/images/noticeBg.png");
-		padding:21px;
+		padding:10px;
 	}
 	.mainNotice > .notice{
 		width:100%;
 		margin:0 auto;
-		padding-bottom:25px;
+		padding-bottom:10px;
 		background: #fff;
 	}
 	/* .notice > img{
@@ -94,21 +99,25 @@
 	} */
 	.notice > p{
 		padding:25px 20px;
+		padding-bottom:0;
 		overflow:hidden;
-		border-bottom: 5px solid lightgray;
-		margin-bottom:20px;
+		border-bottom: 2px solid lightgray;
+		margin-bottom:10px;
 	}
 	.notice > p > img{
 		float:left;
-	}
-	.notice > p > span{
-		font-size:32px;
-		line-height:65px;
-		margin-left:25px;
+		width:88px;
 	}
 	.notice > p > a{
 		float:right;
-		width:67px;
+		width:25px;
+	}
+	.notice > p > span{
+		display:inline-block;
+		width:100%;
+		text-align:left;
+		font-size:15px;
+		line-height:40px;
 	}
 	.notice > p > a > img{
 		width:100%;
@@ -118,29 +127,31 @@
 		margin:0 auto;
 	}
 	.tblNotice td{
-		font-size:32px;
-		line-height: 60px;
+		font-size:15px;
+		line-height: 25px;
 	}
 	.tblNotice .tblIcon{
-		width:60px;
-		padding-left:40px;
+		width:10px;
+		padding-left:20px;
 	}
 	.tblIcon > img{
-		width:15px;
-		margin-top:20px;
+		width:10px;
+		margin-top:7px;
 	}
 	.tblTitle{
-		width:500px;
+		width:110px;
 		overflow:hidden;
 		white-space:nowrap;
 		text-overflow: ellipsis;
 	}
 	.tblTitle > a {
 		width:100%;
-		font-size:37px;
+		font-size:15px;
 	}
 	.tblDate{
-		width:140px;
+		width:45px;
+		padding-left:10px;
+		
 	}
 	
 	
@@ -201,25 +212,27 @@
 						<%-- <img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon2.png"> --%>
 						<p>
 							<img src="${pageContext.request.contextPath}/resources/images/mobileMainNoticeIcon.png">
-							<span>억산한의원의 새로운 소식입니다.</span>
 							<a class="noticeMoreBtn" href="${pageContext.request.contextPath}/mNotice"><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
+							<br>
+							<span>억산한의원의 새로운 소식입니다.</span>
 						</p>
 						<table class="tblNotice">
-							<tr>
-								<td class="tblIcon"><img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon3.png"></td>
-								<td class="tblTitle"><a href="">안녕하세요~ 억산입니다. 지금은 게시판 테스트 중 입니다.</a></td>
-								<td class="tblDate">2018.08.08</td>
-							</tr>
-							<tr>
-								<td class="tblIcon"><img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon3.png"></td>
-								<td class="tblTitle"><a href="">반갑습니다 지금은 억산 공지사항 테스트 입니다.</a></td>
-								<td class="tblDate">2018.08.08</td>
-							</tr>
-							<tr>
-								<td class="tblIcon"><img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon3.png"></td>
-								<td class="tblTitle"><a href="">안녕하세요~ 억산입니다.</a></td>
-								<td class="tblDate">2018.08.08</td>
-							</tr>
+							<c:choose>
+							    <c:when test="${fn:length(list) == 0}">
+						        	<tr>
+						        		<td colspan="5" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+						        	</tr>
+							    </c:when>
+							    <c:otherwise>
+							        <c:forEach var="item" items="${list}" end="2">
+									<tr>
+										<td class="tblIcon"><img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon3.png"></td>
+										<td class="tblTitle"><a href="${pageContext.request.contextPath}/mNoticeRead?bno=${item.bno}">${item.title}</a></td>
+										<td class="tblDate"><fmt:formatDate type="date" value="${item.regdate}"/></td>
+									</tr>
+								</c:forEach>
+							    </c:otherwise> 
+							</c:choose>
 						</table>
 					</div><!-- notice end -->
 				</div><!-- mainNotice end -->

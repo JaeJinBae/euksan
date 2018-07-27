@@ -170,10 +170,10 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/painClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/euksanStoryBg.png">
 			<div class="clinicBgText">
-				<h1>통증클리닉</h1>
-				<p>통증에 따른 억산한의원의 클리닉</p>
+				<h1>억산이야기</h1>
+				<p>환자와 소통하며 편하게 다가가는 억산이야기</p>
 			</div><!-- clinicBgText end -->
 		</div><!-- clinicBg end -->
 		<div class="middleNav">

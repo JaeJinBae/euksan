@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <style>
 	header{
 		width:100%;
@@ -21,7 +21,7 @@
 	}
 	section{
 		width:100%;
-		margin-top:22%;
+		margin-top:25%;
 		position: relative;
 		z-index: 1;
 	}
@@ -30,19 +30,18 @@
 	}
 	.mainBanner div img{
 		width:100%;
-		height:150px;
 	}
 	.clinicWrap{
 		width:100%;
 		background: url("${pageContext.request.contextPath}/resources/images/clinicBg.png");
-		padding-top:15px; 
-		margin-bottom:20px;
+		padding-top:50px;
+		margin-bottom:50px;
 	}
 	.clinicIntroImg{
 		display:block;
 		width:75%;
 		margin:0 auto;
-		margin-bottom:20px;
+		margin-bottom:50px;
 	}
 	.clinicContentWrap{
 		width:100%;
@@ -62,16 +61,15 @@
 		left:25px;
 	}
 	.clinic > a > img{
-		width:50px;
+		width:200px;
 	}
 	.secondContentWrap{
 		width:100%;
-		margin-bottom:20px;
+		margin-bottom:50px;
 	}
 	.mainInfo{
 		width:100%;
 		background: url("${pageContext.request.contextPath}/resources/images/infoBg.png");
-		margin-bottom:20px;
 	}
 	.mainInfo > img{
 		width:100%;
@@ -79,12 +77,12 @@
 	.mainNotice{
 		width:100%;
 		background: url("${pageContext.request.contextPath}/resources/images/noticeBg.png");
-		padding:10px;
+		padding:21px;
 	}
 	.mainNotice > .notice{
 		width:100%;
 		margin:0 auto;
-		padding-bottom:10px;
+		padding-bottom:25px;
 		background: #fff;
 	}
 	/* .notice > img{
@@ -96,25 +94,21 @@
 	} */
 	.notice > p{
 		padding:25px 20px;
-		padding-bottom:0;
 		overflow:hidden;
-		border-bottom: 2px solid lightgray;
-		margin-bottom:10px;
+		border-bottom: 5px solid lightgray;
+		margin-bottom:20px;
 	}
 	.notice > p > img{
 		float:left;
-		width:88px;
+	}
+	.notice > p > span{
+		font-size:32px;
+		line-height:65px;
+		margin-left:25px;
 	}
 	.notice > p > a{
 		float:right;
-		width:25px;
-	}
-	.notice > p > span{
-		display:inline-block;
-		width:100%;
-		text-align:left;
-		font-size:15px;
-		line-height:40px;
+		width:67px;
 	}
 	.notice > p > a > img{
 		width:100%;
@@ -124,31 +118,29 @@
 		margin:0 auto;
 	}
 	.tblNotice td{
-		font-size:15px;
-		line-height: 25px;
+		font-size:32px;
+		line-height: 60px;
 	}
 	.tblNotice .tblIcon{
-		width:10px;
-		padding-left:20px;
+		width:60px;
+		padding-left:40px;
 	}
 	.tblIcon > img{
-		width:10px;
-		margin-top:7px;
+		width:15px;
+		margin-top:20px;
 	}
 	.tblTitle{
-		width:110px;
+		width:500px;
 		overflow:hidden;
 		white-space:nowrap;
 		text-overflow: ellipsis;
 	}
 	.tblTitle > a {
 		width:100%;
-		font-size:15px;
+		font-size:37px;
 	}
 	.tblDate{
-		width:45px;
-		padding-left:10px;
-		
+		width:140px;
 	}
 	
 	
@@ -209,9 +201,8 @@
 						<%-- <img src="${pageContext.request.contextPath}/resources/images/mainNoticeIcon2.png"> --%>
 						<p>
 							<img src="${pageContext.request.contextPath}/resources/images/mobileMainNoticeIcon.png">
-							<a class="noticeMoreBtn" href="${pageContext.request.contextPath}/mNotice"><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
-							<br>
 							<span>억산한의원의 새로운 소식입니다.</span>
+							<a class="noticeMoreBtn" href="${pageContext.request.contextPath}/mNotice"><img src="${pageContext.request.contextPath}/resources/images/noticeBtn.png"></a>
 						</p>
 						<table class="tblNotice">
 							<tr>

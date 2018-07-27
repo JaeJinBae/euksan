@@ -35,7 +35,7 @@
 		width: 100%;
 	}
 	.clinicBgText{
-		width:350px;
+		width:100%;
 		height:105px;
 		margin:auto;
 		text-align:center;
@@ -86,7 +86,7 @@
 	}
 	.sideMenuTopText > hr{
 		border:0;
-		border-top:5px solid #453534;
+		border-top:4px solid #453534;
 		width:50px;
 		margin:0;
 		margin-top:17px;
@@ -138,8 +138,8 @@
 		<div class="clinicBg">
 			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
 			<div class="clinicBgText">
-				<h1>통증클리닉</h1>
-				<p>통증에 따른 억산한의원의 클리닉</p>
+				<h1>억산클리닉</h1>
+				<p>질환의 근본원인을 파악하여 치료하는 억산클리닉</p>
 			</div><!-- clinicBgText end -->
 		</div><!-- clinicBg end -->
 		<div class="contentWrap">
@@ -152,13 +152,13 @@
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic1">유산 후 관리</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic2">산후 조리</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic3">소아질환</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic4" style="color:black;">부인과 질환</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic5">남성 질환</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic6">수험생클리닉</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic7">다이어트</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic1">- 유산 후 조리</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic2">- 산후 조리</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic3">- 소아·청소년질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic4" style="color:black;">- 부인과 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic5">- 남성 전립선 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic6">- 수험생클리닉</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic7">- 다이어트</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">

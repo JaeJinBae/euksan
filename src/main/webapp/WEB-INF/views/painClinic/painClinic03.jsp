@@ -86,7 +86,7 @@
 	}
 	.sideMenuTopText > hr{
 		border:0;
-		border-top:5px solid #453534;
+		border-top:4px solid #453534;
 		width:50px;
 		margin:0;
 		margin-top:17px;
@@ -136,7 +136,7 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/painClinicBg.png">
 			<div class="clinicBgText">
 				<h1>통증클리닉</h1>
 				<p>통증에 따른 억산한의원의 클리닉</p>
@@ -152,11 +152,11 @@
 				</div><!-- sideMenuTopText end -->
 				<div class="sideMenuNav">
 					<ul>
-						<li><a href="${pageContext.request.contextPath}/painClinic1">목디스크</a></li>
-						<li><a href="${pageContext.request.contextPath}/painClinic2">허리디스크</a></li>
-						<li><a href="${pageContext.request.contextPath}/painClinic3" style="color:black;">무릎통증</a></li>
-						<li><a href="${pageContext.request.contextPath}/painClinic4">손목·팔꿈치통증</a></li>
-						<li><a href="${pageContext.request.contextPath}/painClinic5">족부통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic1">- 목디스크</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic2">- 허리디스크</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic3" style="color:black;">- 무릎통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic4">- 손목·팔꿈치통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic5">- 족부통증</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
