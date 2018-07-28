@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>억산한의원</title>
+<title>언론보도 | 억산한의원</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?ver=2">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
@@ -162,8 +162,8 @@
 		font-size:14px;
 		padding:10px;
 	}
-	.tableWrap > table tr:last-child td{
-		font-size:14px;
+	.tableWrap > table tr:last-child td, p, a, span, ul, ol, li, dl, dt, dd, table, th, fieldset, legend, input{
+		font-size:inherit;
 	}
 	.tableWrap > table td >h1{
 		font-size:25px;

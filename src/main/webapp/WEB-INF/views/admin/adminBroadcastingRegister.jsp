@@ -223,7 +223,8 @@
     			alert("제목을 입력해주세요.");
     			return false;
     		}
-    	})
+    	});
+		
 		
 	});
 </script>

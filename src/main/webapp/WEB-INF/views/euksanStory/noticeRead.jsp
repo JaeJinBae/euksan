@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>억산한의원</title>
+<title>공지사항 | 억산한의원</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?ver=2">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
@@ -162,17 +162,18 @@
 		font-size:14px;
 		padding:10px;
 	}
-	.tableWrap > table tr:last-child td{
-		font-size:14px;
+	.tableWrap > table tr:last-child td, p, a, span, ul, ol, li, dl, dt, dd, table, th, fieldset, legend, input,h1,h2,h3,h4{
+		font-size:inherit;
 	}
 	.tableWrap > table td >h1{
 		font-size:25px;
 	}
 	.golist{
-		width:100%;
+		width:100%; 
 		text-align: right;
 		margin-top:20px;
 		padding:0 30px;
+		margin-bottom:50px;
 	}
 	.golist a{
 		display:inline-block;

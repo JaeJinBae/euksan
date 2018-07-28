@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>억산한의원</title>
+<title>온라인 상담 | 억산한의원</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?ver=2">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
@@ -257,6 +257,17 @@
     		var keyword = encodeURIComponent(k);
     		location.href="advice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
+		
+      //익스플로러에서 한글 검색 후 read로 넘어갈 때 인코딩 문제 아래와 같이 해결
+		$(".title > a").click(function(e){
+			e.preventDefault();
+			var bno=$(this).parent().parent().find(".bno").text();
+			var s=$("select[name='searchType']").val();
+    		var searchType = encodeURIComponent(s);
+			var k=$("input[name='keyword']").val();
+    		var keyword = encodeURIComponent(k);
+    		location.href="adviceRead${pageMaker.makeQuery(pageMaker.cri.page)}&searchType="+searchType+"&keyword="+keyword+"&bno="+bno;
+		});
 	});
 </script>
 </head>
@@ -314,7 +325,7 @@
 						    <c:otherwise>
 						        <c:forEach var="item" items="${list}">
 									<tr>
-										<td>${item.bno}</td>
+										<td class="bno">${item.bno}</td>
 										<td class="title">
 											<c:if test="${item.pwtype=='x'}">
 												<img class="lockImg" src="${pageContext.request.contextPath}/resources/images/lock1.png">

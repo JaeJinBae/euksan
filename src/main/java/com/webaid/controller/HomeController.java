@@ -262,7 +262,7 @@ public class HomeController {
 		logger.info("noticeHome GET");
 		
 		List<NoticeVO> list = nService.listSearch(cri);
-
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -281,11 +281,21 @@ public class HomeController {
 		NoticeVO vo=nService.selectOne(bno);
 		nService.updateCnt(bno);
 		
+		/*String keyword=cri.getKeyword()+"";
+		logger.info("받은 키워드="+keyword);
+		
+		if(!keyword.equals("null")){
+			logger.info("키워드가 있다");
+			String encodeResult=URLEncoder.encode(keyword);
+			cri.setKeyword(encodeResult);
+			logger.info("인코딩한 키워드="+encodeResult);
+		}*/
+		 cri.setKeyword(null);
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
 		pageMaker.setTotalCount(nService.listSearchCount(cri));
-
+		
 		model.addAttribute("item", vo);
 		model.addAttribute("pageMaker", pageMaker);
 		
@@ -317,6 +327,8 @@ public class HomeController {
 		BroadcastingVO vo = bService.selectOne(bno);
 		bService.updateCnt(bno);
 		
+		cri.setKeyword(null);
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -330,15 +342,7 @@ public class HomeController {
 	@RequestMapping(value = "/advice", method=RequestMethod.GET)
 	public String advice(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("advice get");
-		/*String keyword=cri.getKeyword()+"";
-		logger.info(keyword);
 		
-		if(!keyword.equals("null")){
-			logger.info("키워드가 있다");
-			String decodeResult=URLDecoder.decode(keyword, "UTF-8");
-			String encodeResult=URLEncoder.encode(keyword, "UTF-8");
-			cri.setKeyword(encodeResult);
-		}*/
 		
 		List<AdviceVO> list = aService.listSearch(cri);
 		logger.info(cri.getKeyword());
@@ -438,6 +442,8 @@ public class HomeController {
 		
 		AdviceVO vo=aService.selectOne(bno);
 		ReplyVO rvo=rService.select(bno);
+		
+		cri.setKeyword(null);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
