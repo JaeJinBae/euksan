@@ -127,7 +127,7 @@
 				$(this).find("img").attr("src","${pageContext.request.contextPath}/resources/images/ico_arr_nav_down_x1.png");
 				arr[index]=0;
 			}
-			
+			 
 			$(this).parent().find(".subMenu").slideToggle("fast");
 			
 		});
