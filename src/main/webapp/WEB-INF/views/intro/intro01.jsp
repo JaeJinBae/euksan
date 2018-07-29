@@ -119,6 +119,7 @@
 	.contentMain{
 		width:850px;
 		float:right;
+		background: url("${pageContext.request.contextPath}/resources/images/subContentBg.png") no-repeat;
 	}
 	.contentMain > img{
 		width:100%;
@@ -136,7 +137,7 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/introBg.png">
 			<div class="clinicBgText">
 				<h1>한의원 소개</h1>
 				<p>질환뿐만 아니라 마음까지 치료하는 억산한의원입니다.</p>

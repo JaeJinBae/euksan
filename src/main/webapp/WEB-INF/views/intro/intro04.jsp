@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=dgV0db9f4TaHqHFPyVRP&submodules=geocoder"></script>
 <style>
 	body{
 		
@@ -119,10 +120,10 @@
 	.contentMain{
 		width:850px;
 		float:right;
+		margin-bottom:100px;
+		background: url("${pageContext.request.contextPath}/resources/images/subContentBg.png") no-repeat;
 	}
-	.contentMain > img{
-		width:100%;
-	}
+	
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -136,7 +137,7 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/introBg.png">
 			<div class="clinicBgText">
 				<h1>한의원 소개</h1>
 				<p>질환뿐만 아니라 마음까지 치료하는 억산한의원입니다.</p>
@@ -162,7 +163,24 @@
 				</div>
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicTest.png">
+				<img style="width:100%;" src="${pageContext.request.contextPath}/resources/images/intro4.png">
+				<div id="map" style="width:800px;height:350px;margin:0 auto;"></div>
+	
+				<script> 
+					var mapOptions = {
+					    center: new naver.maps.LatLng(35.858136, 128.465012),
+					    zoom: 12
+					};
+					 
+					var map = new naver.maps.Map('map', mapOptions);
+					
+					var marker = new naver.maps.Marker({
+					    position: new naver.maps.LatLng(35.858476, 128.465088),
+					    map: map
+					});
+					
+				</script>
+				<img style="width:100%;" src="${pageContext.request.contextPath}/resources/images/intro4_1.png">
 			</div>
 		</div>
 	</section>

@@ -129,7 +129,7 @@
 		</div>
 		<div class="contentWrap">
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/euksanClinic5.png">
+				<img src="${pageContext.request.contextPath}/resources/images/mEuksanClinic5.png">
 			</div>
 		</div>
 	</section>

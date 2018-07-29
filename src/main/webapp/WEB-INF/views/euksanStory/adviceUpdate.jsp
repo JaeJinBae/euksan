@@ -123,7 +123,7 @@
 	.contentMain{
 		width:850px;
 		float:right;
-		background: url("${pageContext.request.contextPath}/resources/images/euksanStoryContentBg2.png") no-repeat;
+		background: url("${pageContext.request.contextPath}/resources/images/subContentBg.png") no-repeat;
 	}
 	.contentTitle{
 		width:100%;

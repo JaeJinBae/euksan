@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 	body{
@@ -95,14 +96,55 @@
 	}
 	.contentMain{
 		width:100%;
+		background:url("${pageContext.request.contextPath}/resources/images/mSubContentBg.png") no-repeat;
+		margin-bottom:50px;
 	}
-	.contentMain > img{
+	.bigImg{
+		position: relative;
+		margin-bottom: 20px;
+		margin-top:50px;
+	}
+	.bigImg img{
+		width:280px;
+		margin:0 auto;
+	}
+	.bigImg .imgText{
 		width:100%;
+		background: rgba(255,255,255,0.5);
+		color:white;
+		position: absolute;
+		bottom:0;
+		text-align: center;
+	}
+	.slick-prev:before, .slick-next:before{
+		font-size:30px;
+		color:#361f09;
+		opacity: 1;
+	}
+	.slick-next{
+		right:5px;
+		z-index:99;
+	}
+	.slick-prev{
+		left:5px; 
+		z-index:99;
+	}
+	.slick-dots{
+		bottom:-35px;
+	}
+	.slick-dots li button:before{
+		color:#d1d1d1;
 	}
 </style>
 <script type="text/javascript">
 	$(function(){
-		
+		 $(".bigImg").slick({
+	        	slidesToShow:1,
+	        	slidesToScroll:1,
+	        	arrows:true,
+	        	fade:true,
+	        	dots:true,
+	        });
 	});
 </script>
 </head>
@@ -112,7 +154,7 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/painClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/introBg.png">
 			<div class="clinicBgText">
 				<h1>한의원 소개</h1>
 				<p>질환뿐만 아니라 마음까지 치료하는 억산한의원입니다.</p>
@@ -129,7 +171,17 @@
 		</div>
 		<div class="contentWrap">
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/intro3.png">
+				<img style="width:100%;" src="${pageContext.request.contextPath}/resources/images/intro3.png">
+				<div class="bigImg">
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg01.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg02.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg03.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg04.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg05.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg06.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg07.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg08.png" alt="억산한의원"></div>
+				</div>
 			</div>
 		</div>
 	</section>

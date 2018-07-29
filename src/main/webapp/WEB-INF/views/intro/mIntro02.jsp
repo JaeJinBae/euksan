@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.rwdImageMaps.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 	body{
@@ -95,6 +96,7 @@
 	}
 	.contentMain{
 		width:100%;
+		background:url("${pageContext.request.contextPath}/resources/images/mSubContentBg.png") no-repeat;
 	}
 	.contentMain > img{
 		width:100%;
@@ -102,7 +104,8 @@
 </style>
 <script type="text/javascript">
 	$(function(){
-		
+		//이미지맵 반응형 적용
+		$('img[usemap]').rwdImageMaps();
 	});
 </script>
 </head>
@@ -112,7 +115,7 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/painClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/introBg.png">
 			<div class="clinicBgText">
 				<h1>한의원 소개</h1>
 				<p>질환뿐만 아니라 마음까지 치료하는 억산한의원입니다.</p>
@@ -129,7 +132,10 @@
 		</div>
 		<div class="contentWrap">
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/intro2.png">
+				<img src="${pageContext.request.contextPath}/resources/images/mIntro2.png" alt="진료안내" usemap="#intro2Img" name="intro2Img">
+				<map id="intro2ContentImg" name="intro2Img">
+					<area shape="rect" alt="온라인 상담" title="" coords="729,1675,871,1760" href="${pageContext.request.contextPath}/mAdvice" target="" />
+				</map>
 			</div>
 		</div>
 	</section>

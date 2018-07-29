@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/slick/slick.min.js"></script>
 <style>
 	body{
 		
@@ -119,14 +120,69 @@
 	.contentMain{
 		width:850px;
 		float:right;
+		margin-bottom:100px;
+		background: url("${pageContext.request.contextPath}/resources/images/subContentBg.png") no-repeat;
 	}
-	.contentMain > img{
+	.bigImg{
+		width:650px;
+		margin:0 auto;
+	}
+	.bigImg img{ 
+		width: 650px;
+	}
+	.bigImg .imgText{
 		width:100%;
+		height:50px;
+		line-height:50px;
+		background: rgba(255,255,255, 0.5);
+		color:white;
+		position: absolute;
+		bottom:0;
+		font-size:20px;
+	}
+	.smallImg{
+		width:850px;
+		margin:0 auto;
+		margin-top:100px;
+	}
+	.smallImg div img{
+		width:200px;
+	}
+	.slick-prev:before, .slick-next:before{
+		color:#361f09;
+		opacity: 1;
+	}
+	.slick-next{
+		right:-60px;
+	}
+	.slick-prev{
+		left:-60px;
+	}
+	.slick-dots{
+		bottom:-50px;
+	}
+	.slick-dots li button:before{
+		color:#d1d1d1;
 	}
 </style>
 <script type="text/javascript">
 	$(function(){
-		
+		$(".bigImg").slick({
+        	slidesToShow:1, 
+        	slidesToScroll:1,
+        	arrows:true,
+        	fade:true,
+        	asNavFor:".smallImg"
+        });
+        $(".smallImg").slick({
+			slidesToShow: 4,
+			slidesToScroll: 1,
+        	asNavFor:".bigImg",
+        	arrows:false,
+        	dots:true,
+        	centerMode:false,
+        	focusOnSelect:true
+        });
 	});
 </script>
 </head>
@@ -136,7 +192,7 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/introBg.png">
 			<div class="clinicBgText">
 				<h1>한의원 소개</h1>
 				<p>질환뿐만 아니라 마음까지 치료하는 억산한의원입니다.</p>
@@ -162,7 +218,27 @@
 				</div>
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicTest.png">
+				<img style="width:100%;" src="${pageContext.request.contextPath}/resources/images/intro3.png">
+				<div class="bigImg">
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg01.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg02.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg03.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg04.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg05.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg06.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg07.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg08.png" alt="억산한의원"></div>
+				</div>
+				<div class="smallImg">
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg01.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg02.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg03.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg04.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg05.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg06.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg07.png" alt="억산한의원"></div>
+					<div><img src="${pageContext.request.contextPath}/resources/images/introContentBimg08.png" alt="억산한의원"></div>
+				</div>
 			</div>
 		</div>
 	</section>

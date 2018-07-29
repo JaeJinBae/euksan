@@ -116,9 +116,10 @@
 		width:200px;
 		margin-top:10px;
 	}
-	.contentMain{
+	.contentMain{ 
 		width:850px;
 		float:right;
+		background: url("${pageContext.request.contextPath}/resources/images/subContentBg.png") no-repeat;
 	}
 	.contentMain > img{
 		width:100%;
@@ -136,7 +137,7 @@
 	</header>
 	<section>
 		<div class="clinicBg">
-			<img src="${pageContext.request.contextPath}/resources/images/euksanClinicBg.png">
+			<img src="${pageContext.request.contextPath}/resources/images/introBg.png">
 			<div class="clinicBgText">
 				<h1>한의원 소개</h1>
 				<p>질환뿐만 아니라 마음까지 치료하는 억산한의원입니다.</p>
@@ -160,9 +161,12 @@
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
 				</div>
-			</div><!-- sideMenuWrap end -->
+			</div><!-- sideMenuWrap end --> 
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinicTest.png">
+				<img src="${pageContext.request.contextPath}/resources/images/intro2.png" alt="진료안내" usemap="#intro2Img" name="intro2Img">
+				<map id="intro2ContentImg" name="intro2Img">
+					<area shape="rect" alt="온라인 상담" title="" coords="613,1187,713,1247" href="${pageContext.request.contextPath}/advice" target="" />
+				</map>
 			</div>
 		</div>
 	</section>
