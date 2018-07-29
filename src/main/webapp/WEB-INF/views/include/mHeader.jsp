@@ -114,13 +114,24 @@
 	    document.getElementById("main").style.marginRight = "0";
 	    document.body.style.backgroundColor = "white";
 	}
-	$(function(){
-		$(".mainMenu > li").click(function(){
-			$(this).find("p > img").attr("src","${pageContext.request.contextPath}/resources/images/ico_arr_nav_up_x1.png");
-			$(this).find(".subMenu").slideToggle("fast");
-		});
-	});
 	
+	$(function(){
+		var arr=[0, 0, 0, 0, 0, 0];
+		//메뉴 클릭 시 화살표 방향 변경
+		$(".mainMenu > li > p").click(function(){
+			var index=$(".mainMenu > li > p").index(this);
+			if(arr[index]==0){
+				$(this).find("img").attr("src","${pageContext.request.contextPath}/resources/images/ico_arr_nav_up_x1.png");
+				arr[index]=1;
+			}else{
+				$(this).find("img").attr("src","${pageContext.request.contextPath}/resources/images/ico_arr_nav_down_x1.png");
+				arr[index]=0;
+			}
+			
+			$(this).parent().find(".subMenu").slideToggle("fast");
+			
+		});
+	});	
 </script>
 <div class="headerWrap"><!-- mobileMenu.png -->
 	<a class="logo" href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/logo.png"></a>
