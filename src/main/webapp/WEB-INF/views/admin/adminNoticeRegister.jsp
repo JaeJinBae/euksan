@@ -106,7 +106,7 @@
 	}
 	.tbl_board table .tbl_header th{
 		border-top:2px solid #e3e3e3;
-		border-bottom:2px solid #00B4AE;
+		border-bottom:2px solid #5c4530;
 		padding:8px 13px;
 		font-size:15px;
 	}
@@ -152,7 +152,7 @@
 		border:1px solid #e9e9e9;
 	}
 	.active1{
-		background: #00B4AE;
+		background: #5c4530;
 	}
 	.active2{
 		font-weight: bold;
@@ -185,6 +185,22 @@
 		margin-bottom:50px;
 		text-align: center;
 	}
+	.btn > input{
+		border: 0;
+	    background: #5c4530;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 31px;
+	    height:20px;
+	}
+	.btn > a > button{
+		border: 0;
+	    background: #5c4530;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 55px;
+	    height:20px;
+	}
 	/* 이미지 업로드 설명서 */
 	.howToUpload{
 		width:225px;
@@ -210,6 +226,8 @@
 	.howToUpload ol li img{
 		width:20px;
 	}
+	/* 버튼 css */
+	
 </style>
 <script type="text/javascript">
 	$(function(){

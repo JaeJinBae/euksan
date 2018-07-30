@@ -102,7 +102,7 @@
 	}
 	.tbl_board table .tbl_header th{
 		border-top:2px solid #e3e3e3;
-		border-bottom:2px solid #00B4AE;
+		border-bottom:2px solid #5c4530;
 		padding:8px 13px;
 		font-size:15px;
 	}
@@ -122,6 +122,14 @@
 	}
 	.tbl_board table td:not(.title){
 		text-align: center;
+	}
+	.tbl_board table td button{
+		border: 0;
+	    background: #5c4530;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 31px;
+	    height:20px;
 	}
 	.replyCnt{
 		font-weight: 600;
@@ -148,7 +156,7 @@
 		border:1px solid #e9e9e9;
 	}
 	.active1{
-		background: #00B4AE;
+		background: #5c4530;
 	}
 	.active2{
 		font-weight: bold;
@@ -162,6 +170,22 @@
 		float:right;
 		margin-right:35px;
 		margin-top:31px;
+	}
+	.registerBtn > a > button{
+		border: 0;
+	    background: #5c4530;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 45px;
+	    height:25px;
+	}
+	#searchBtn{ 
+		border: 0;
+	    background: #5c4530;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 31px;
+	    height:20px;
 	}
 </style>
 <script type="text/javascript">

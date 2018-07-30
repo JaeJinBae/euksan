@@ -71,6 +71,8 @@
 	.sideMenuWrap{
 		width:200px;
 		margin-top:35px;
+		margin-bottom:100px;
+		margin-left:15px;
 		float:left;
 		position: relative;
 	}.sideMenuWrap > img{
@@ -266,7 +268,7 @@
     		var searchType = encodeURIComponent(s);
 			var k=$("input[name='keyword']").val();
     		var keyword = encodeURIComponent(k);
-    		location.href="adviceRead${pageMaker.makeQuery(pageMaker.cri.page)}&searchType="+searchType+"&keyword="+keyword+"&bno="+bno;
+    		location.href="${pageContext.request.contextPath}/advicePwType${pageMaker.makeQuery(pageMaker.cri.page)}&searchType="+searchType+"&keyword="+keyword+"&bno="+bno;
 		});
 	});
 </script>

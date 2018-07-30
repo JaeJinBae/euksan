@@ -16,7 +16,7 @@
 		padding:0;
 	}
 
-		.contentWrap{
+	.contentWrap{
 		width:100%;
 		min-width:1280px;
 		margin:0 auto;
@@ -93,7 +93,7 @@
 	}
 	#tableDiv .t .tbl_header{
 		border-top: 2px solid #e3e3e3;
-		border-bottom: 2px solid #00B4AE;
+		border-bottom: 2px solid #5c4530;
 		font-size: 15px;
 	}
 	#tableDiv .t th{
@@ -126,7 +126,7 @@
 		height:25px;
 		line-height:25px;
 		color:white;
-		background-color: #00B4AE;
+		background-color: #5c4530;
 		text-decoration: none;
 		font-size: 15px;
 		padding:5px;
@@ -148,7 +148,7 @@
 		border:1px solid #e9e9e9;
 	}
 	.active1{
-		background: #00B4AE;
+		background: #5c4530;
 	}
 	.active2{
 		font-weight: bold;

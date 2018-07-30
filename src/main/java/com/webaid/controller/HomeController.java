@@ -1,7 +1,5 @@
 package com.webaid.controller;
 
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,10 +24,12 @@ import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.ReplyVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.StatisticsVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BroadcastingService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.ReplyService;
+import com.webaid.service.StatisticsService;
 
 @Controller
 public class HomeController {
@@ -48,12 +48,22 @@ public class HomeController {
 	@Autowired
 	private ReplyService rService;
 	
+	@Autowired
+	private StatisticsService sService;
+	
 	// device check
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String deviceCheck(HttpServletRequest req, Model model) {
 		logger.info("deviceCheck.");
 		
 		List<NoticeVO> list=nService.selectAll();
+		
+		StatisticsVO vo = getUser(req);
+		if(vo.getUrl().indexOf("http://test7425.cafe24.com/")>-1){
+			logger.info("같은 홈페이지");
+		}else{
+			sService.insert(getUser(req));
+		}
 		
 		Device device=DeviceUtils.getCurrentDevice(req);
 		String deviceType="unknown";
@@ -503,4 +513,72 @@ public class HomeController {
 		return "redirect:/advice"+pageMaker.makeSearch(cri.getPage());
 	}
 	// ====================== pc, tablet end ===================================
+	
+	private StatisticsVO getUser(HttpServletRequest request){
+		String agent = request.getHeader("User-Agent");
+		String browser = null;
+		String device = "";
+		String old_url = request.getHeader("referer"); 
+	
+		StatisticsVO vo = new StatisticsVO();
+		
+		if(agent !=null){
+			if(agent.indexOf("Trident")>-1){
+				browser = "Explorer";
+				device  ="PC";
+			}else if(agent.indexOf("Chrome")>-1){
+				
+				if(agent.indexOf("Android")>-1 && agent.indexOf("Mobile")>-1){
+					device  ="Mobile";
+					if(agent.indexOf("SamsungBrowser")>-1){
+						browser="SamsungBrowser";
+					}else if(agent.indexOf("inapp")>-1 && agent.indexOf("NAVER")>-1){
+						browser="Naver App";
+					}else{
+						browser="etc";
+					}
+				}else{
+					browser = "Chrome";
+					device  ="PC";
+				}
+				
+			}else if(agent.indexOf("Opera")>-1){
+				browser = "Opera";
+				device  ="PC";
+			}else if(agent.indexOf("iPhone")>-1 && agent.indexOf("Mobile")>-1){
+				device  ="Mobile";
+				if(agent.indexOf("Safari")>-1){
+					browser="Safari";
+				}else if(agent.indexOf("inapp")>-1 && agent.indexOf("NAVER")>-1){
+					browser="Naver App";
+				}else{
+					browser="etc";
+				}
+			}else if(agent.indexOf("iPad")>-1 && agent.indexOf("Mobile")>-1){
+				device = "Tablet Pc";
+				
+				if(agent.indexOf("Safari")>-1){
+					browser="Safari";
+				}else if(agent.indexOf("inapp")>-1 && agent.indexOf("NAVER")>-1){
+					browser="Naver App";
+				}else{
+					browser="etc";
+				}
+			}else{
+				browser="etc";
+				device = "etc";
+			}
+		}
+		
+		if(old_url==null){
+			vo.setUrl("직접");
+		}else{
+			vo.setUrl(old_url);
+		}
+		
+		vo.setBrowser(browser);
+		vo.setDevice(device);
+		
+		return vo;
+	}
 }

@@ -71,6 +71,8 @@
 	.sideMenuWrap{
 		width:200px;
 		margin-top:35px;
+		margin-bottom:100px;
+		margin-left:15px;
 		float:left;
 		position: relative;
 	}.sideMenuWrap > img{

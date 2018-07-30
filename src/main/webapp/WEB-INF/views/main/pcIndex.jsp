@@ -252,7 +252,7 @@
 						</div>
 						<div class="clinic">
 							<img src="${pageContext.request.contextPath}/resources/images/mainClinic02.png">
-							<a href="${pageContext.request.contextPath}/intro1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="통증클리닉 더보기"></a>
+							<a href="${pageContext.request.contextPath}/painClinic1"><img src="${pageContext.request.contextPath}/resources/images/moreBtn.png" alt="통증클리닉 더보기"></a>
 						</div>
 						<div class="clinic">
 							<img src="${pageContext.request.contextPath}/resources/images/mainClinic03.png">
@@ -299,7 +299,7 @@
 					<div class="bottomIntro">
 						<img src="${pageContext.request.contextPath}/resources/images/mainBottomIcon.png">
 						<div class="bottomContentText">
-							<h1><a href="">한의원 둘러보기</a></h1>
+							<h1><a href="${pageContext.request.contextPath}/intro3">한의원 둘러보기</a></h1>
 							<p>따뜻하고 편안한 억산한의원</p>
 						</div>
 					</div>

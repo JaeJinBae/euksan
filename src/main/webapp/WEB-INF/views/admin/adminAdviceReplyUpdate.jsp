@@ -107,7 +107,7 @@
 	}
 	.tbl_board table .tbl_header th{
 		border-top:2px solid #e3e3e3;
-		border-bottom:2px solid #00B4AE;
+		border-bottom:2px solid #5c4530;
 		padding:8px 5px;
 	}
 	.tbl_board table .tbl_header th:nth-child(2){
@@ -147,7 +147,7 @@
 		border:1px solid #e9e9e9;
 	}
 	.active1{
-		background: #00B4AE;
+		background: #5c4530;
 	}
 	.active2{
 		font-weight: bold;
@@ -174,7 +174,7 @@
 		width:100%;
 		margin:0 auto;
 		border:0;
-		border-top:2px solid #00B4AE;
+		border-top:2px solid #5c4530;
 	}
 	.notice_content .nTitle{
 		font-size:25px;
@@ -226,7 +226,22 @@
 		margin-bottom:50px;
 		text-align: center;
 	}
-	
+	.btn > a > button{
+		border: 0;
+	    background: #5c4530;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 35px;
+	    height:23px;
+	}
+	.btn > input{
+		border: 0;
+	    background: #5c4530;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 35px;
+	    height:23px;
+	}
 </style>
 </head>
 <body>

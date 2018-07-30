@@ -105,7 +105,7 @@
 	}
 	.tbl_board table .tbl_header th{
 		border-top:2px solid #e3e3e3;
-		border-bottom:2px solid #00B4AE;
+		border-bottom:2px solid #5c4530;
 		padding:8px 5px;
 	}
 	.tbl_board table .tbl_header th:nth-child(2){
@@ -145,7 +145,7 @@
 		border:1px solid #e9e9e9;
 	}
 	.active1{
-		background: #00B4AE;
+		background: #5c4530;
 	}
 	.active2{
 		font-weight: bold;
@@ -166,7 +166,7 @@
 		width:100%;
 		margin:0 auto;
 		border:0;
-		border-top:2px solid #00B4AE;
+		border-top:2px solid #5c4530;
 	}
 	.notice_content .nTitle{
 		font-size:25px;
@@ -187,6 +187,18 @@
 	.notice_content .nContent{
 		margin-bottom:50px;
 		padding:0 15px;
+	}
+	.btnDiv{
+		text-align: right;
+		margin-top:20px;
+	}
+	.btnDiv > a > button{
+		border: 0;
+	    background: #5c4530;
+	    color: #fff;
+	    border-radius: 3px;
+	    width: 35px;
+	    height:23px;
 	}
 </style>
 </head>
@@ -211,7 +223,7 @@
 					${item.content}
 				</div>
 				<hr>
-				<p>
+				<p class="btnDiv">
 					<a href="${pageContext.request.contextPath}/admin/adminBroadcasting${pageMaker.makeSearch(pageMaker.cri.page)}"><button>목록</button></a>
 					<a href="${pageContext.request.contextPath}/admin/adminBroadcastingUpdate${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>수정</button></a>
 					<a href="${pageContext.request.contextPath}/admin/adminBroadcastingDelete${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}"><button>삭제</button></a>
