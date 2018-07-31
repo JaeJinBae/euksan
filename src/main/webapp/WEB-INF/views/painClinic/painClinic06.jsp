@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>무릎통증 | 억산한의원</title>
+<title>족저근막염 | 억산한의원</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?ver=2">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
@@ -155,17 +155,17 @@
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/painClinic1">- 목디스크</a></li>
 						<li><a href="${pageContext.request.contextPath}/painClinic2">- 허리디스크</a></li>
-						<li><a href="${pageContext.request.contextPath}/painClinic3" style="color:black;">- 무릎통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic3">- 무릎통증</a></li>
 						<li><a href="${pageContext.request.contextPath}/painClinic4">- 손목통증</a></li>
 						<li><a href="${pageContext.request.contextPath}/painClinic5">- 팔꿈치통증</a></li>
-						<li><a href="${pageContext.request.contextPath}/painClinic6">- 족저근막염</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic6" style="color:black;">- 족저근막염</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">
 				</div>
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/painClinic03.png">
+				<img src="${pageContext.request.contextPath}/resources/images/painClinic06.png">
 			</div>
 		</div>
 	</section>

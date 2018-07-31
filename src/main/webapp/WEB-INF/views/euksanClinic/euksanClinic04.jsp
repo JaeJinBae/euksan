@@ -155,7 +155,7 @@
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic1">- 유산 후 조리</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic2">- 산후 조리</a></li>
-						<li><a href="${pageContext.request.contextPath}/euksanClinic3">- 소아·청소년질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/euksanClinic3">- 성장클리닉</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic4" style="color:black;">- 부인과 질환</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic5">- 남성 전립선 질환</a></li>
 						<li><a href="${pageContext.request.contextPath}/euksanClinic6">- 수험생클리닉</a></li>

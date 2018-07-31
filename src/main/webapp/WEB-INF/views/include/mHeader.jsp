@@ -162,8 +162,9 @@
 						<li><a href="${pageContext.request.contextPath}/mPainClinic1">- 목디스크</a></li>
 						<li><a href="${pageContext.request.contextPath}/mPainClinic2">- 허리디스크</a></li>
 						<li><a href="${pageContext.request.contextPath}/mPainClinic3">- 무릎통증</a></li>
-						<li><a href="${pageContext.request.contextPath}/mPainClinic4">- 손목·팔꿈치통증</a></li>
-						<li><a href="${pageContext.request.contextPath}/mPainClinic5">- 족부통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/mPainClinic4">- 손목통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/mPainClinic5">- 팔꿈치통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/mPainClinic6">- 족저근막염</a></li>
 					</ul>
 				</div>
 			</li>
@@ -173,7 +174,7 @@
 					<ul class="subNavUl">
 						<li><a href="${pageContext.request.contextPath}/mEuksanClinic1">- 유산 후 조리</a></li>
 						<li><a href="${pageContext.request.contextPath}/mEuksanClinic2">- 산후 조리</a></li>
-						<li><a href="${pageContext.request.contextPath}/mEuksanClinic3">- 소아·청소년 질환</a></li>
+						<li><a href="${pageContext.request.contextPath}/mEuksanClinic3">- 성장클리닉</a></li>
 						<li><a href="${pageContext.request.contextPath}/mEuksanClinic4">- 부인과 질환</a></li>
 						<li><a href="${pageContext.request.contextPath}/mEuksanClinic5">- 남성 전립선 질환</a></li>
 						<li><a href="${pageContext.request.contextPath}/mEuksanClinic6">- 수험생클리닉</a></li>

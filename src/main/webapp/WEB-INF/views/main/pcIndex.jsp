@@ -8,6 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>억산한의원</title>
+<meta name="naver-site-verification" content="d53046e7ecfe442e3b973c1baeb37ec7fc75031d"/>
+<meta name="description" content="다사 대실역 한의원, 교통사고, 통증클리닉, 유산·산후조리, 보약, 봉독요법(봉침), 성장클리닉, 다이어트">
+<meta property="og:type" content="website">
+<meta property="og:title" content="억산한의원">
+<meta property="og:description" content="다사 대실역 한의원, 교통사고, 통증클리닉, 유산·산후조리, 보약, 봉독요법(봉침), 성장클리닉, 다이어트">
+<meta property="og:image" content="http://www.euksan.com/logo.png">
+<meta property="og:url" content="http://www.euksan.com">
+<link rel="canonical" href="http://www.euksan.com/">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?ver=3">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=0"/>

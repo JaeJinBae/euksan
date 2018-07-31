@@ -123,7 +123,7 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">한의원 소개</a></li>
+				<li><a href="${pageContext.request.contextPath}/mIntro1">한의원 소개</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li>인사말</li>
 			</ul>

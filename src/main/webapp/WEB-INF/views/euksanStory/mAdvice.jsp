@@ -228,7 +228,7 @@
     		var searchType = encodeURIComponent(s);
     		var k=$("input[name='keyword']").val();
     		var keyword = encodeURIComponent(k);
-    		location.href="mNotice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+    		location.href="mAdvice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
 	});
 </script>
@@ -249,9 +249,9 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">억산 이야기</a></li>
+				<li><a href="${pageContext.request.contextPath}/mNotice">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>온라인 상담</li>
+				<li><a href="${pageContext.request.contextPath}/mAdvice">온라인 상담</a></li>
 			</ul>
 		</div>
 		<div class="contentWrap">

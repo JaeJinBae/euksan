@@ -180,9 +180,9 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">억산 이야기</a></li>
+				<li><a href="${pageContext.request.contextPath}/mNotice">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>언론보도</li>
+				<li><a href="${pageContext.request.contextPath}/mBroadcasting">언론보도</a></li>
 			</ul>
 		</div>
 		<div class="contentWrap">

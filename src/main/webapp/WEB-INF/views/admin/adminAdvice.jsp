@@ -188,7 +188,16 @@
     		var keyword = encodeURIComponent(k);
     		location.href="adminAdvice${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
     	});
-		
+      //익스플로러에서 한글 검색 후 read로 넘어갈 때 인코딩 문제 아래와 같이 해결
+		$(".title > a").click(function(e){
+			e.preventDefault();
+			var bno=$(this).parent().parent().find(".bno").text();
+			var s=$("select[name='searchType']").val();
+    		var searchType = encodeURIComponent(s);
+			var k=$("input[name='keyword']").val();
+    		var keyword = encodeURIComponent(k);
+    		location.href="${pageContext.request.contextPath}/admin/adminAdviceRead${pageMaker.makeQuery(pageMaker.cri.page)}&searchType="+searchType+"&keyword="+keyword+"&bno="+bno;
+		});
 	});
 </script>
 </head>
@@ -225,7 +234,7 @@
 					    <c:otherwise>
 					        <c:forEach var="item" items="${list}">
 								<tr>
-									<td>${item.bno}</td>
+									<td class="bno">${item.bno}</td>
 									<td class="title"><a href="${pageContext.request.contextPath}/admin/adminAdviceRead${pageMaker.makeSearch(pageMaker.cri.page)}&bno=${item.bno}">${item.title}</a></td>
 									<td>${item.writer}</td>
 									<td><fmt:formatDate type="date" value="${item.regdate}"/></td>

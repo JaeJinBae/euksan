@@ -59,7 +59,7 @@ public class HomeController {
 		List<NoticeVO> list=nService.selectAll();
 		
 		StatisticsVO vo = getUser(req);
-		if(vo.getUrl().indexOf("http://test7425.cafe24.com/")>-1){
+		if(vo.getUrl().indexOf("http://www.euksan.com/")>-1){
 			logger.info("같은 홈페이지");
 		}else{
 			sService.insert(getUser(req));
@@ -175,6 +175,14 @@ public class HomeController {
 		return "painClinic/painClinic05";
 	}
 	
+	@RequestMapping(value = "/painClinic6", method = RequestMethod.GET)
+	public String painClinic06() {
+		logger.info("painClinic06 Get");
+		
+		
+		return "painClinic/painClinic06";
+	}
+	
 	@RequestMapping(value = "/euksanClinic1", method = RequestMethod.GET)
 	public String euksanClinic01() {
 		logger.info("euksanClinic01 Get");
@@ -273,6 +281,9 @@ public class HomeController {
 		
 		List<NoticeVO> list = nService.listSearch(cri);
 		
+		cri.setKeyword(null);
+		cri.setSearchType("n");
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -291,16 +302,6 @@ public class HomeController {
 		NoticeVO vo=nService.selectOne(bno);
 		nService.updateCnt(bno);
 		
-		/*String keyword=cri.getKeyword()+"";
-		logger.info("받은 키워드="+keyword);
-		
-		if(!keyword.equals("null")){
-			logger.info("키워드가 있다");
-			String encodeResult=URLEncoder.encode(keyword);
-			cri.setKeyword(encodeResult);
-			logger.info("인코딩한 키워드="+encodeResult);
-		}*/
-		 cri.setKeyword(null);
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -319,6 +320,9 @@ public class HomeController {
 
 		List<BroadcastingVO> list = bService.listSearch(cri);
 
+		cri.setKeyword(null);
+		cri.setSearchType("n");
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -337,8 +341,6 @@ public class HomeController {
 		BroadcastingVO vo = bService.selectOne(bno);
 		bService.updateCnt(bno);
 		
-		cri.setKeyword(null);
-		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -356,6 +358,9 @@ public class HomeController {
 		
 		List<AdviceVO> list = aService.listSearch(cri);
 		logger.info(cri.getKeyword());
+		
+		cri.setKeyword(null);
+		cri.setSearchType("n");
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);

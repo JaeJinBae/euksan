@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>무릎통증 | 억산한의원</title>
+<title>족저근막염 | 억산한의원</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css?ver=2">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
@@ -124,12 +124,12 @@
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li><a href="${pageContext.request.contextPath}/mPainClinic1">통증 클리닉</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>무릎통증</li>
+				<li>족저근막염</li>
 			</ul>
 		</div>
 		<div class="contentWrap">
 			<div class="contentMain">
-				<img src="${pageContext.request.contextPath}/resources/images/mPainClinic03.png">
+				<img src="${pageContext.request.contextPath}/resources/images/mPainClinic06.png">
 			</div>
 		</div>
 	</section>

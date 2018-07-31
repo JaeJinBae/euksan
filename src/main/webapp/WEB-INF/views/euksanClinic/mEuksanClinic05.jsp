@@ -122,7 +122,7 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">억산 클리닉</a></li>
+				<li><a href="${pageContext.request.contextPath}/mEuksanClinic1">억산 클리닉</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
 				<li>남성 전립선 질환</li>
 			</ul>

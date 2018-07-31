@@ -20,7 +20,7 @@
 		top:-55px;
 	}
 	.formDiv table{
-		width:315px;
+		width:340px;
 		margin: 20px auto;
 		border-collapse: collapse;
 	}

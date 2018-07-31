@@ -175,9 +175,9 @@
 			<ul>
 				<li><a href="${pageContext.request.contextPath}/mMain"><img src="${pageContext.request.contextPath}/resources/images/mobileHomeIcon.png"> &nbsp;&nbsp;HOME</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li><a href="">억산 이야기</a></li>
+				<li><a href="${pageContext.request.contextPath}/mNotice">억산 이야기</a></li>
 				<li class="nextArrow"><img src="${pageContext.request.contextPath}/resources/images/ico_arr_nav_x1.png"></li>
-				<li>공지사항</li>
+				<li><a href="${pageContext.request.contextPath}/mNotice">공지사항</a></li>
 			</ul>
 		</div>
 		<div class="contentWrap">

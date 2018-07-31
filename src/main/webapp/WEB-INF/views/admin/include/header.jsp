@@ -12,7 +12,7 @@
 	}
 	#headerDiv{
 		width:100%;
-		min-width:1024px;
+		min-width:1280px;
 		color:skyblue;
 		background: #17161C;
 	}

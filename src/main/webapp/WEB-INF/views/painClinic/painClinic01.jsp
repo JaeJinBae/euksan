@@ -156,8 +156,9 @@
 						<li><a href="${pageContext.request.contextPath}/painClinic1" style="color:black;">- 목디스크</a></li>
 						<li><a href="${pageContext.request.contextPath}/painClinic2">- 허리디스크</a></li>
 						<li><a href="${pageContext.request.contextPath}/painClinic3">- 무릎통증</a></li>
-						<li><a href="${pageContext.request.contextPath}/painClinic4">- 손목·팔꿈치통증</a></li>
-						<li><a href="${pageContext.request.contextPath}/painClinic5">- 족부통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic4">- 손목통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic5">- 팔꿈치통증</a></li>
+						<li><a href="${pageContext.request.contextPath}/painClinic6">- 족저근막염</a></li>
 					</ul>
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTime.png">
 					<img src="${pageContext.request.contextPath}/resources/images/sideMenuTel.png">

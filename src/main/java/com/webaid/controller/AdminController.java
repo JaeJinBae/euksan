@@ -93,7 +93,12 @@ public class AdminController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest req) {
 		HttpSession session = req.getSession(false);
-
+		
+		if (session.getAttribute("id") == null) {
+			logger.info("아이디는 null 입니다.");
+			return "admin/adminLogin";
+		}
+		
 		session.invalidate();
 
 		return "redirect:/";
@@ -135,7 +140,10 @@ public class AdminController {
 		}
 
 		List<NoticeVO> list = nService.listSearch(cri);
-
+		
+		cri.setKeyword(null);
+		cri.setSearchType("n");
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -161,7 +169,7 @@ public class AdminController {
 
 		NoticeVO vo = nService.selectOne(bno);
 		nService.updateCnt(bno);
-
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -288,6 +296,9 @@ public class AdminController {
 
 		List<BroadcastingVO> list = bService.listSearch(cri);
 
+		cri.setKeyword(null);
+		cri.setSearchType("n");
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -442,6 +453,9 @@ public class AdminController {
 
 		List<AdviceVO> list = aService.listSearch(cri);
 
+		cri.setKeyword(null);
+		cri.setSearchType("n");
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
@@ -467,7 +481,7 @@ public class AdminController {
 
 		AdviceVO vo = aService.selectOne(bno);
 		ReplyVO rvo = rService.select(bno);
-
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.makeSearch(cri.getPage());
