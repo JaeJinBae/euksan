@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/slick/slick-theme.css?ver=1"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=dgV0db9f4TaHqHFPyVRP&submodules=geocoder"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b6deba15bc94d75bff7aab3b25d06222&libraries=drawing"></script>
 <style>
 	body{
 		
@@ -165,7 +165,7 @@
 			</div><!-- sideMenuWrap end -->
 			<div class="contentMain">
 				<img style="width:100%;" src="${pageContext.request.contextPath}/resources/images/intro4.png">
-				<div id="map" style="width:800px;height:350px;margin:0 auto;"></div>
+				<!-- <div id="map" style="width:800px;height:350px;margin:0 auto;"></div>
 	
 				<script> 
 					var mapOptions = {
@@ -180,6 +180,58 @@
 					    map: map
 					});
 					
+				</script> -->
+				<div id="map" style="width:800px;height:350px;margin:0 auto;"></div>
+				<script>
+					var container = document.getElementById('map');
+					var options = {
+						center: new daum.maps.LatLng(35.858136, 128.465012),
+						level: 3
+					};
+			
+					var map = new daum.maps.Map(container, options);
+					
+					// 마커가 표시될 위치입니다 
+					var markerPosition  = new daum.maps.LatLng(35.858476, 128.465088); 
+
+					// 마커를 생성합니다
+					var marker = new daum.maps.Marker({
+					    position: markerPosition
+					});
+
+					// 마커가 지도 위에 표시되도록 설정합니다
+					marker.setMap(map);
+					
+					// 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다.
+					var iwContent = '<div style="padding-left:40px; padding-top:2px; color:brown; font-size:15px; font-weight:bold;">억산한의원</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+					// 인포윈도우를 생성합니다
+					var infowindow = new daum.maps.InfoWindow({
+					    content : iwContent
+					});
+
+					// 마커에 마우스오버 이벤트를 등록합니다
+					daum.maps.event.addListener(marker, 'mouseover', function() {
+					  // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+					    infowindow.open(map, marker);
+					});
+
+					// 마커에 마우스아웃 이벤트를 등록합니다
+					daum.maps.event.addListener(marker, 'mouseout', function() {
+					    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+					    infowindow.close();
+					});
+					
+					daum.maps.event.addListener(marker, 'click', function() {
+					  // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+					    infowindow.open(map, marker);
+					});
+					
+					// 마커에 마우스아웃 이벤트를 등록합니다
+					daum.maps.event.addListener(map, 'click', function() {
+					    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+					    infowindow.close();
+					});
 				</script>
 				<img style="width:100%;" src="${pageContext.request.contextPath}/resources/images/intro4_1.png">
 			</div>

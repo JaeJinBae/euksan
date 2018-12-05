@@ -1,5 +1,7 @@
 package com.webaid.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,12 +55,14 @@ public class HomeController {
 	
 	// device check
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String deviceCheck(HttpServletRequest req, Model model) {
+	public String deviceCheck(HttpServletRequest req, Model model) throws UnsupportedEncodingException {
 		logger.info("deviceCheck.");
 		
 		List<NoticeVO> list=nService.selectAll();
 		
 		StatisticsVO vo = getUser(req);
+		
+
 		if(vo.getUrl().indexOf("http://www.euksan.com/")>-1){
 			logger.info("같은 홈페이지");
 		}else{
@@ -519,11 +523,20 @@ public class HomeController {
 	}
 	// ====================== pc, tablet end ===================================
 	
-	private StatisticsVO getUser(HttpServletRequest request){
+	private StatisticsVO getUser(HttpServletRequest request) throws UnsupportedEncodingException{
+		logger.info("url= "+request.getHeader("referer"));
+		String decodeResult;
+		if(request.getHeader("referer")==null){
+			decodeResult=null;
+		}else{
+			decodeResult = URLDecoder.decode(request.getHeader("referer"), "UTF-8");
+		} 
+		
+		
 		String agent = request.getHeader("User-Agent");
 		String browser = null;
 		String device = "";
-		String old_url = request.getHeader("referer"); 
+		String old_url = decodeResult; 
 	
 		StatisticsVO vo = new StatisticsVO();
 		

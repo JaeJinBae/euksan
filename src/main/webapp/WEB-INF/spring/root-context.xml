@@ -60,4 +60,5 @@
 	
 	<context:component-scan base-package="com.webaid.persistence"></context:component-scan>
 	<context:component-scan base-package="com.webaid.service"></context:component-scan>
+	
 </beans>
