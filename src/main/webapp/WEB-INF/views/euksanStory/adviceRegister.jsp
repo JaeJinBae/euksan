@@ -319,7 +319,7 @@
 							<a href="${pageContext.request.contextPath}/advice${pageMaker.makeSearch(pageMaker.cri.page)}" class="cancelBtn"><button type="button">취소</button></a>
 						</div>
 					</form>
-				</div>
+				</div><!-- tableWrap end -->
 			</div>
 		</div>
 	</section>
